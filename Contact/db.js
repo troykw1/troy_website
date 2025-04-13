@@ -5,7 +5,7 @@ const client = new Client({
     host: 'dpg-cvu4fqre5dus73cg00lg-a',
     database: 'test_56z1',
     password: 'pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY',
-    port: 5433, // Default PostgreSQL port
+    port: 5432, // Default PostgreSQL port
 });
 
 client.connect()
