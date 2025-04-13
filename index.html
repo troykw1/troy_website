@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Troy Wille's website</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+    <meta name="theme-color" content="#328db5" />
+    <meta name="navigation-bar-button-color" content="#328db5" />
+    <meta name="navigation-bar-button-border-color" content="#ffffff" />
+    <meta name="navigation-bar-button-hasshadow" content="true" />
+    <style>
+
+        body {
+            font-family: Verdana, sans-serif;
+            font-size: 0.8em;
+            margin: 0px;
+        }
+
+        a {
+            cursor: pointer;
+            color: steelblue;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 5px;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        nav, section, article {
+            margin: 5px;
+            padding: 8px;
+        }
+
+        header {
+            background-color: #328db5;
+        }
+
+        #headerDescription {
+            margin: 5px;
+            padding: 8px;
+            ;
+            margin-top: 0;
+            color: white;
+        }
+
+        #content {
+            margin-left: 5px;
+            margin-right: 5px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="searchInput" placeholder="Search here">
+    <button onclick="search()">Search</button>
+    <div id="results"></div>
+    <script src="Search/main.js"></script>
+
+    <header>
+        <h1 id='headerDescription'></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a onclick='homePage();'>Home Page</a></li>
+            <li><a onclick='blogPage()'>Blog</a></li>
+            <li><a onclick='projectPage()'>Projects</a></li>
+            <li><a onclick='usecasePage()'>Use Cases</a></li>
+            <li><a onclick='contactPage()'>Contact</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id='content'></article>
+    </section>
+    <footer></footer>
+
+    <script>
+function homePage(){
+var pagecontent="Welcome to my website, I hope you enjoy it. This site uses: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li><a href='https://html.spec.whatwg.org/'</a><li>HTML and Css</a></li></ul><br>I will be updating this page with new content.";
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Home Page';
+}
+
+function blogPage(){
+var pagecontent="Here is a blog I wrote called <a href='https://tastytotalmeals.blogspot.com/'</a>Tasty Total Meals";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Blog Page';
+}
+
+function projectPage(){
+var pagecontent="Here are some of my projects. <br><h4>Node.js App with Postgres using CRUD functions</h4><p><a href='get_users'>GET users via API and database</a></p><h4>Insert data from a CSV fle into PostgreSQL using Node.js</h4><h4>Docker app <a href='http://ip172-18-0-40-cv5p1tqim2rg00ccj2e0-3000.direct.labs.play-with-docker.com/'</a>to add To Do items.</h4>";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Project Page';
+}
+
+function usecasePage(){
+var pagecontent="Here are some use cases I can demo<h4>Embedded Okta Sign-In Widget</h4><p><a href='https://glitch.com/edit/#!/great-sunrise-rugby'>Glitch</a></p><p><a href='https://oktatse-oie.okta.com/'>Okta Platform</a>";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Use Case Page';
+}
+
+function contactPage(){
+var pagecontent="Please send us <a href='http://localhost:5000/'</a> a mesage here by filling out the form";
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Contact Page';
+}
+
+document.onload=contactPage();
+
+    </script>
+
+</body>
+</html>
