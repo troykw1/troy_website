@@ -2,7 +2,7 @@
 const { Client } = require('pg');
 const client = new Client({
     user: 'test_56z1_user',
-    host: 'postgresql://test_56z1_user:pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY@dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com/test_56z1',
+    host: 'dpg-cvu4fqre5dus73cg00lg-a',
     database: 'test_56z1',
     password: 'pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY',
     port: 5433, // Default PostgreSQL port
