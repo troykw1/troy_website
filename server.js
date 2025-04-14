@@ -2,6 +2,7 @@ const express = require('express'); //Import the express dependency
 const app = express();              //Instantiate an express app, the main work horse of this server
 const path = require('path');
 const port = process.env.PORT || 3000;                  //Save the port number where your server will be listening
+app.use(express.static("public"));
 
 // Serve static files from the "Contact" directory
 app.use(express.static(path.join(__dirname, 'Contact')));
