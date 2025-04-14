@@ -1,14 +1,16 @@
-const express = require('express'); //Import the express dependency
-const app = express();              //Instantiate an express app, the main work horse of this server
-const port = 3000;                  //Save the port number where your server will be listening
+const express = require('express'); // Import the express dependency
+const path = require('path');       // Import path module for working with file paths
+const app = express();              // Instantiate an express app
+const port = 3000;                  // Save the port number where your server will be listening
 
-//Idiomatic expression in express to route and respond to a client request
-app.get('/', (req, res) => {        //get requests to the root ("/") will route here
-    res.sendFile('index.html', {root: __dirname});      //server responds by sending the index.html file to the client's browser
-                                                        //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
+// Serve static files from the current directory (or specify a public folder)
+app.use(express.static(__dirname));
+
+// Idiomatic expression in Express to route and respond to a client request
+app.get('/', (req, res) => {        // Handle root URL ("/")
+    res.sendFile('index.html', { root: __dirname }); // Send index.html at the root
 });
 
-app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
+app.listen(port, () => {            // Start the server
     console.log(`Now listening on port ${port}`);
-}); 
-
+});
