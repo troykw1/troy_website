@@ -8,15 +8,6 @@ app.use(express.static("public"));
 app.get('/', (req, res) => {        //get requests to the root ("/") will route here
     res.sendFile('index.html', {root: __dirname});      //server responds by sending the index.html file to the client's browser
                                                         //the .sendFile method needs the absolute path to the file, see: https://expressjs.com/en/4x/api.html#res.sendFile 
-});
-
-// Serve static files from the "Contact" directory
-app.use(express.static(path.join(__dirname, 'Contact')));
-
-// Handle requests to the contact route and serve index.html from Contact folder
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Contact/index.html'));
-});
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
     console.log(`Now listening on port ${port}`);
