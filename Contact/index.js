@@ -8,6 +8,7 @@ const port = 5432;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+console.log("Request body:", req.body);
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html'); // Serve the HTML form
@@ -15,10 +16,12 @@ app.get('/', (req, res) => {
 
 app.post('/submit', async (req, res) => {
     const { name, email, message } = req.body;
+    console.log("Received data:", { name, email, message });
+
     try {
         const result = await client.query(
-            'INSERT INTO contacts (name, message, email) VALUES ($1, $2, $3)',
-            [name, message, email]
+            'INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)',
+            [name, email, message]
         );
         console.log("Data inserted successfully");
         res.send('Thank you, we will be in contact with you shortly!');
@@ -29,8 +32,8 @@ app.post('/submit', async (req, res) => {
 });
 
 app.post('/submit', async (req, res) => {
-    const { name, message, email } = req.body;
-    console.log("Received data:", { name, message, email });
+    const { name, email, message } = req.body;
+    console.log("Received data:", { name, email, message });
 });
 
 app.listen(port, () => {
