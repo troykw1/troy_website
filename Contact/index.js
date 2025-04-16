@@ -17,7 +17,7 @@ app.post('/submit', async (req, res) => {
     const { name, email, message } = req.body;
     try {
         const result = await client.query(
-            'INSERT INTO contact (name, email, message) VALUES ($1, $2, $3)',
+            'INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)',
             [name, email, message]
         );
         console.log("Data inserted successfully");
