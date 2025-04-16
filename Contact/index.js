@@ -33,8 +33,8 @@ app.listen(port, () => {
 });
 
 // Contact/index.js
-console.log("Executing code in Contact folder 2");
+console.log("Executing code in Contacts folder 2");
 
 module.exports = {
-  message: "Hello from Contact folder 2"
+  message: "Hello from Contacts folder 2"
 };
