@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const client = require('./db');
 
 const app = express();
-const port = 5000; // Changed to avoid conflict with PostgreSQL port
+const port = 5000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
