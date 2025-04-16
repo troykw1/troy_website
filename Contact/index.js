@@ -6,6 +6,19 @@ const client = require('./db');
 const app = express();
 const port = 5000;
 
+const fs = require('fs/promises');
+
+async function checkFileExistence(filePath) {
+    try {
+        await fs.access(filePath);
+        console.log('File exists');
+    } catch {
+        console.log('File does not exist');
+    }
+}
+
+checkFileExistence('/path/to/file');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
