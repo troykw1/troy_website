@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + 'Contact/index.html'); // Serve the HTML form
+    res.sendFile(__dirname + '/index.html'); // Serve the HTML form
 });
 
 app.post('/submit', async (req, res) => {
