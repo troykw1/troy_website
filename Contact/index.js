@@ -28,6 +28,11 @@ app.post('/submit', async (req, res) => {
     }
 });
 
+app.post('/submit', async (req, res) => {
+    const { name, email, message } = req.body;
+    console.log("Received data:", { name, email, message });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
