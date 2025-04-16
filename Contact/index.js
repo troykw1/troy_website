@@ -17,8 +17,8 @@ app.post('/submit', async (req, res) => {
     const { name, email, message } = req.body;
     try {
         const result = await client.query(
-            'INSERT INTO contacts (name, email, message) VALUES ($1, $2, $3)',
-            [name, email, message]
+            'INSERT INTO contacts (name, message, email) VALUES ($1, $2, $3)',
+            [name, message, email]
         );
         console.log("Data inserted successfully");
         res.send('Thank you, we will be in contact with you shortly!');
@@ -29,8 +29,8 @@ app.post('/submit', async (req, res) => {
 });
 
 app.post('/submit', async (req, res) => {
-    const { name, email, message } = req.body;
-    console.log("Received data:", { name, email, message });
+    const { name, message, email } = req.body;
+    console.log("Received data:", { name, message, email });
 });
 
 app.listen(port, () => {
