@@ -23,6 +23,10 @@ checkFileExistence('/path/to/file');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.get('/submit-contact', (req, res) => {
+    res.send('This endpoint is designed for POST requests to handle form submissions.');
+});
+
 // Route to handle form submission
 app.post('/submit-contact', async (req, res) => {
     const { name, email, message } = req.body;
