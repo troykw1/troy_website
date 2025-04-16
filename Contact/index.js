@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const client = require('./db');
 
 const app = express();
-const port = 5000;
+const port = 5432;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
