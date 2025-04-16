@@ -10,8 +10,7 @@ const port = 5000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Define the /Contact/submit POST route
-app.post('/Contact/submit', async (req, res) => {
+app.post('/submit', async (req, res) => {
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
