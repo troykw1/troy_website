@@ -4,14 +4,13 @@ const bodyParser = require('body-parser');
 const client = require('./db');
 
 const app = express();
-const port = 5432;
+const port = 5000; // Changed to avoid conflict with PostgreSQL port
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-console.log("Request body:", req.body);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html'); // Serve the HTML form
+    res.sendFile(__dirname + '/index.html'); // Serve the HTML form
 });
 
 app.post('/submit', async (req, res) => {
@@ -31,18 +30,6 @@ app.post('/submit', async (req, res) => {
     }
 });
 
-app.post('/submit', async (req, res) => {
-    const { name, email, message } = req.body;
-    console.log("Received data:", { name, email, message });
-});
-
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-// Contact/index.js
-console.log("Executing code in Contacts folder 2");
-
-module.exports = {
-  message: "Hello from Contacts folder 2"
-};
