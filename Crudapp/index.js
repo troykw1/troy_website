@@ -8,11 +8,11 @@ const port = 3000;
 
 // PostgreSQL connection configuration
 const pool = new Pool({
-    user: 'postgres',
-    host: '127.0.0.1',
-    database: 'test',
-    password: 'M1n1c00per',
-    port: 5433 // Change this if your PostgreSQL server is running on a different port
+    host: process.env.PG_HOST,
+    port: process.env.PG_PORT,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE
 });
 
 // Middleware to parse JSON bodies
