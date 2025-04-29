@@ -1,11 +1,11 @@
 // db.js
 const { Client } = require('pg');
 const client = new Client({
-    user: 'test_56z1_user',
-    host: 'dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com'
-    database: 'test_56z1',
-    password: 'pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY',
-    port: 5432, // Default PostgreSQL port
+    host: process.env.PG_HOST,
+    port: process.env.PG_PORT,
+    user: process.env.PG_USER,
+    password: process.env.PG_PASSWORD,
+    database: process.env.PG_DATABASE
 });
 
 client.connect()
