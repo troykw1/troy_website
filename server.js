@@ -5,6 +5,7 @@ const app = express();              // Instantiate an express app
 const port = 3000;                  // Save the port number where your server will be listening
 
 // Middleware to parse form data
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the current directory
@@ -12,9 +13,9 @@ app.use(express.static(__dirname));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // Home Page 
-app.get('/', (req, res) => {
-res.send('Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>');
-});
+// app.get('/', (req, res) => {
+// res.send('Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>');
+// });
     
 Route for the root URL
 app.get('/', (req, res) => {                         
