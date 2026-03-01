@@ -3,9 +3,6 @@ const path = require('path');       // Import path module for working with file 
 const bodyParser = require('body-parser'); // Import body-parser to parse form data
 const app = express();              // Instantiate an express app
 const port = 3000;                  // Save the port number where your server will be listening
-const Crudapp = require('./Crudapp');
-const Contact = require('./Contact');
-const Csvtopostgres = require('./Csvtopostgres');
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
