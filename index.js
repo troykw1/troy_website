@@ -1,13 +1,6 @@
 const express = require('express'); //Import the express dependency
 const app = express();              //Instantiate an express app, the main work horse of this server
-const port = 3000;                  //Save the port number where your server will be listening
-const Crudapp = require('./Crudapp');
-const Contact = require('./Contact');
-const Csvtopostgres = require('./Csvtopostgres');
-
-console.log(Crudapp.message);
-console.log(Contact.message);
-console.log(Csvtopostgres.message);
+const port = 5000;                  //Save the port number where your server will be listening
 
 //Idiomatic expression in express to route and respond to a client request
 app.get('/', (req, res) => {        //get requests to the root ("/") will route here
