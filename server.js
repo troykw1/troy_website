@@ -12,9 +12,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));  // added this 
 
 // Route for the root URL
-app.get('/', (req, res) => {
-res.sendFile('index.html', { root: __dirname });
-});
+// app.get('/', (req, res) => {
+// res.sendFile('index.html', { root: __dirname });
+// });
 
 // Route to handle form submission
 app.post('/submit', (req, res) => {
