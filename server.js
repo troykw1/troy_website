@@ -7,10 +7,6 @@ const Crudapp = require('./Crudapp');
 const Contact = require('./Contact');
 const Csvtopostgres = require('./Csvtopostgres');
 
-console.log(Crudapp.message);
-console.log(Contact.message);
-console.log(Csvtopostgres.message);
-
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
