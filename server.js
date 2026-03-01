@@ -9,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the current directory
 app.use(express.static(__dirname));  
-app.use(express.static(__dirname)); 
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // Route for the root URL
