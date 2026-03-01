@@ -32,7 +32,9 @@ app.post('/submit', (req, res) => {
     console.log('Form Data:', { name, email, message });
 
     // Respond to the client
-    res.send(`Thank you, ${name}! Your message has been received.`);
+   // res.send(`Thank you, ${name}! Your message has been received.`);
+    res.send(`Thank you${name}! Your message has been received. <br> <a href='https://troysnew-website.onrender.com'>Click here to return home</a>`);
+
 });
 
 // Start the server
