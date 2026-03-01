@@ -15,6 +15,8 @@ app.get('/', (req, res) => {
     res.sendFile('https://troysnew-website.onrender.com/index.html', { root: __dirname });
 });
 
+/*
+
 // Route to handle form submission
 app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
@@ -30,3 +32,5 @@ app.post('/submit', (req, res) => {
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
 });
+
+*/
