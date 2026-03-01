@@ -12,8 +12,7 @@ app.use(express.static(__dirname));
 
 // Route for the root URL
 app.get('/', (req, res) => {
-     res.render('home');
-//    res.sendFile('index.html', { root: __dirname });
+res.sendFile('index.html', { root: __dirname });
 });
 
 // Route to handle form submission
