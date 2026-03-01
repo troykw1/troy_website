@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <title>Troy K. Wille's website</title>
+    <title>Troy Wille's website</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
     <meta name="theme-color" content="#328db5" />
@@ -64,6 +64,7 @@
             <li><a onclick='homePage();'>Home Page</a></li>
             <li><a onclick='blogPage()'>Blog</a></li>
             <li><a onclick='projectPage()'>Projects</a></li>
+            <li><a onclick='usecasePage()'>Use Cases</a></li>
             <li><a onclick='contactPage()'>Contact</a></li>
         </ul>
     </nav>
@@ -74,32 +75,10 @@
 
     <script>
 function homePage(){
-var pagecontent="Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>";
+var pagecontent="Welcome to my website, I hope you enjoy it. This site uses: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li><a href='https://html.spec.whatwg.org/'</a><li>HTML and Css</a></li></ul><br>I will be updating this page with new content.";
 this.content.innerHTML=pagecontent;
  this.headerDescription.innerHTML='Home Page';
 }
-
-function blogPage(){
-var pagecontent="Here is a Blogg I wrote called Total Tasty meals.<ul><a href='https://tastytotalmeals.blogspot.com/'</a><li>Please visit my Blogg here</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>It uses RESTful API</li></ul>";
-    
-this.content.innerHTML=pagecontent;
- this.headerDescription.innerHTML='Blog Page';
-}
-
-function projectPage(){
-var pagecontent="Here are some of my projects I can demonstrate to you. <br><h4>Node.js App with Postgres using CRUD functions</h4><p></p><h4>Insert data from a CSV fle into PostgreSQL using Node.js</h4>";
-
-this.content.innerHTML=pagecontent;
- this.headerDescription.innerHTML='Project Page';
-}
-
-function contactPage(){
-var pagecontent="Please send us <a href='Contact/index.html'</a> a mesage here by filling out the form";
-this.content.innerHTML=pagecontent;
- this.headerDescription.innerHTML='Contact Page';
-}
-
-document.onload=contactPage();
 
     </script>
 
