@@ -76,6 +76,10 @@
 function homePage(){
 var pagecontent="Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>";
 this.content.innerHTML=pagecontent;
+
+    // Append the new content using +=
+this.content.innerHTML += "<br><h3>SUMMARY OF EXPERIENCE</h3><p>Dynamic and collaborative with a focus on delivering exceptional end-to-end solutions and customer experiences with vast experience in customer technical and application product support, as well as developer support.</p>";
+    
  this.headerDescription.innerHTML='Home Page';
 }
 
@@ -107,4 +111,5 @@ document.onload=homePage();
 
 
 </html>
+
 
