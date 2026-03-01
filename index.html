@@ -80,6 +80,35 @@ this.content.innerHTML=pagecontent;
  this.headerDescription.innerHTML='Home Page';
 }
 
+function blogPage(){
+var pagecontent="Here is a blog I wrote called <a href='https://tastytotalmeals.blogspot.com/'</a>Tasty Total Meals";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Blog Page';
+}
+
+function projectPage(){
+var pagecontent="Here are some of my projects. <br><h4>Node.js App with Postgres using CRUD functions</h4><p><a href='get_users'>GET users via API and database</a></p><h4>Insert data from a CSV fle into PostgreSQL using Node.js</h4>";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Project Page';
+}
+
+function usecasePage(){
+var pagecontent="Here are some use cases I can demo<h4>Embedded Okta Sign-In Widget</h4><p><a href='https://glitch.com/edit/#!/great-sunrise-rugby'>Glitch</a></p><p><a href='https://oktatse-oie.okta.com/'>Okta Platform</a>";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Use Case Page';
+}
+
+function contactPage(){
+var pagecontent="Please send us <a href='http://localhost:5000/'</a> a mesage here by filling out the form";
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Contact Page';
+}
+
+document.onload=contactPage();
+
     </script>
 
 </body>
