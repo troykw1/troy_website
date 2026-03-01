@@ -8,7 +8,8 @@ const port = 3000;                  // Save the port number where your server wi
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the current directory
-app.use(express.static(__dirname));
+// app.use(express.static(__dirname));  commented out
+app.use(express.static(path.join(__dirname, 'public')));  // added this 
 
 // Route for the root URL
 app.get('/', (req, res) => {
