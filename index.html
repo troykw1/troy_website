@@ -11,7 +11,7 @@
     <style>
 
 		table, th, td {
-  			border: 1px solid white;
+  			border: 3px solid white;
   			border-collapse: collapse;
 		}
 		th, td {
@@ -98,7 +98,7 @@
   
 	var pagecontent = '<table style="border: 1px solid white; width: 50%;">' +
                     '<tr>' +
-                        '<th>Summary of my work experience</th>' +
+                        '<th><a href="#Work">Summary of my work experience</a></th>' +
                         '<th>Skills</th>' +
                         '<th>Hobbies</th>' +
                     '</tr>' +
@@ -108,7 +108,7 @@
                         '<td>View my hobbies</td>' +
                     '</tr>' +
                    '</table>';  
-    pagecontent += "<p><h4><u>SUMMARY OF MY WORK EXPERIENCE</u></h4></p>";	   
+    pagecontent += '<div id="Work"><h4><u>SUMMARY OF MY WORK EXPERIENCE</u></h4></div>';   
 	pagecontent += "<p><li>I am highly experienced with managing proactive and reactive tasks, and supporting all layers of customer's multi-tiered cloud enterprise apps systems and on-premises apps in production environments, managing, monitoring, system administration, troubleshooting/ debugging and resolving complex issues in various AI-driven cloud-based PaaS, SaaS, IDaaS, XaaS, IaC platforms (i.e. IAM, AWS, workflow automation platforms, SIEM and SOAR security analytics platforms).</li></p>";
 	pagecontent += "<p><li>I am highly experienced in data and log analysis troubleshooting, monitoring and analyzing the complete flow of log event data from a wide variety of data sources to customer's cloud-based platforms to support a multitude of use cases and end-to-end solutions; this includes components (Relays, Cloud collectors), and these data sources: REST APIs and API service integrations, flows, app integrations (M365, Okta, AWS, Box, Google Workspace, etc.), Cloud services (AWS, GCP, MS Azure, GitHub, etc.), Event Load Balancers with HTTP endpoints (Event/Stream modes with 4 tagging levels), databases, custom logs, flat files, directories (AD, LDAP), profile sourcing, various agents, various connectors, imports, import sets, protocols (SCIM, Inbound SAML, OAuth 2.0, OIDC, REST APIs, JDBC, Syslog (TCP/UDP).</li></p>";
 	pagecontent += "<p><li>I am highly experienced with SDLC (deployments, Bug, Tasks, Feature Requests, Problem, Product, Project and Release management) to support and deliver end-to-end solutions. </li></p>";
@@ -152,6 +152,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
