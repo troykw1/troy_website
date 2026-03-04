@@ -90,7 +90,20 @@
 // Home Page
 		
 	function homePage(){
-    var pagecontent = "Welcome to <b>Troy K. Wille's</b> website, I hope you enjoy it. <br><br> I'm a seasoned, dynamic, collaborative IT professional with a focus on delivering exceptional end-to-end solutions and customer experiences by delivering value to customers.<br><br><img scr='arrowiconsm.jpg'>Please visit <a onclick='aboutmePage();'>About Me page</a> that lists the Summary of my work experience and skills.<br><br>I have vast experience in:<br><li>Client-side customer technical, application and developer product support, and technical account management from purchase to production.</li><br><li>Managing ongoing customer needs effectively to ultimately drive high customer retention and loyalty.</li><br><li>Building and fostering long term customer and user relationships, providing customers with ad-hoc training, providing product demonstrations, leading user and customer facing meetings and presentations with large groups of people, working cross-functionally both internally and within my organization's user facing teams to provide and implement operational solutions and working with various multi-disciplinary teams.</li><br><li>Providing technical recommendations and best practices for solutions based on customers' needs.</li><br><li>Planning, strategizing roll-outs and upgrades for platform adoption by the customer.</li><br><li>Facilitating visibility into company’s product roadmap to help educate and engage customers with feature requests.</li><br><li>Creating and publishing user-facing content with Problem Identification and Solution</li><br><br> My website application I built uses JavaScript, Node.js, PostgreSQL and REST API. <br> The server-side logic is handled by a Node.js runtime environment using Express framework. <br> The communication between the client and server is facilitated by a RESTful API, which uses standard HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations. <br> The API interacts with PostgreSQL relational database using node-postgres client library to manage and persist data.";
+    var pagecontent = "Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I'm a seasoned, dynamic, collaborative IT professional with a focus on delivering exceptional end-to-end solutions and customer experiences by delivering value to customers.<br><br>";
+	
+    pagecontent += "<p>I have vast experience in:</p>";
+	pagecontent += "<p><li>Client-side customer technical, application and developer product support, and technical account management from purchase to production.</li></p>";
+	pagecontent += "<p><li>Managing ongoing customer needs effectively to ultimately drive high customer retention and loyalty.</li></p>";
+	pagecontent += "<p><li>Building and fostering long term customer and user relationships, providing customers with ad-hoc training, providing product demonstrations, leading user and customer facing meetings and presentations with large groups of people.</li></p>";
+	pagecontent += "<p><li>Working cross-functionally both internally and within my organization's user facing teams to provide and implement operational solutions and working with various multi-disciplinary teams.</li></p>";
+	pagecontent += "<p><li>Providing technical recommendations and best practices for solutions based on customers' needs.</li></p>";
+	pagecontent += "<p><li>Planning, strategizing roll-outs and upgrades for platform adoption by the customer.</li></p>";
+	pagecontent += "<p><li>Facilitating visibility into company’s product roadmap to help educate and engage customers with feature requests.</li></p>";
+	pagecontent += "<p><li>Creating and publishing user-facing content with Problem Identification and Solution.</li></p>";
+	
+	pagecontent += <p class='tech-stack'>My website application I built uses JavaScript, Node.js, PostgreSQL and REST API.</p>";
+
   
 	// Assuming this.content refers to the DOM element where content is rendered
     this.content.innerHTML = pagecontent; 
@@ -166,6 +179,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
