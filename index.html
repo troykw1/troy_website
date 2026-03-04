@@ -121,13 +121,13 @@
                     '<tr>' +
                         '<th>Summary of my work experience</th>' +
                         '<th>Demonstrated Skills</th>' +
-                        '<th>Education and Certifications</th>' +
+                        '<th>Certifications</th>' +
 						'<th>Accomplishments</th>'              +
                     '</tr>' +
                     '<tr>' +
                         '<td><a href="#Work">View Summary of my work experience</a></td>' +
                         '<td>View Demonstrated Skills</td>' +
-                        '<td>View Education and Certifications</td>' +
+                        '<td><a href="#Certifications">View Certifications</td>' +
 						'<td>Accomplishments</td>' +
                     '</tr>' +
                    '</table>';  
@@ -151,7 +151,33 @@
 	pagecontent += "<p><li>Planning, strategizing roll-outs and upgrades for platform adoption by the customer.</li></p>";
 	pagecontent += "<p><li>Facilitating visibility into company’s product roadmap to help educate and engage customers with feature requests.</li></p>";
 	pagecontent += "<p><li>Creating and publishing user-facing content with Problem Identification and Solution.</li></p><br>";
+
+	pagecontent += '<div id="Certifications" style="clear:both; padding-top: 15px;"><h4>Certifications</h4></div>';
 	
+	pagecontent += "2022 to 2025<br>";
+    pagecontent += "<li>Okta Certified Developer certification.</li>";
+	pagecontent += "<li>Okta Certified Administrator certification.</li>";
+	pagecontent += "<li>Okta Certified Professional certification.</li>";
+	pagecontent += "<li>Workflows: Foundations for Flowgrammers certification.</li>";
+	
+	pagecontent += "2025, Databricks Academy<br>";
+    pagecontent += "<li>Generative AI Fundamentals, Generative AI App Development, SQL Analytics and BI certificates.</li>";
+	
+	pagecontent += "2003 to 2004, San Diego Community College<br>";
+	pagecontent += "<li>Certificate in Web programming & Interactive Media Web Design.</li>";
+	pagecontent += "Skills: ActionScript, JavaScript, XML, HTML, CSS<br>";
+	
+	pagecontent += "2001 to 2002, Cisco Networking Academy<br>";
+	pagecontent += "<li>Certificate in Cisco Network Administration</li>";
+	pagecontent += "Certification #: 207040-177700-684381<br>"
+	
+	pagecontent += "2000 to 2001, San Diego Community College<br>";
+	pagecontent += "<li>Certificate in Linux/ Apache Web Server Maintenance & Security. </li>";
+	pagecontent += "Skills: SQL/mySQL, Oracle, PHP, Linux, Apache web server, Java, JavaScript.<br>";
+	
+	pagecontent += "1996 to 1999, California State University Los Angeles";
+	pagecontent += "<li>Bachelor of Science in Business Administration.</li>";
+		
     // Assuming this.content refers to the DOM element where content is rendered
     this.content.innerHTML = pagecontent; 
     
@@ -211,6 +237,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
