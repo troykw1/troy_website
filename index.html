@@ -96,7 +96,7 @@
 // About Me
 	function aboutmePage(){
   
-	var pagecontent = '<table style="border: 1px solid white; width: 100%;">' +
+	var pagecontent = '<table style="border: 1px solid white; width: 80%;">' +
                     '<tr>' +
                         '<th>Summary of my work experience</th>' +
                         '<th>Demonstrated Skills</th>' +
@@ -110,6 +110,7 @@
 						'<td>Accomplishments</td>' +
                     '</tr>' +
                    '</table>';  
+				   
     pagecontent += '<div id="Work"><h4><u>SUMMARY OF MY WORK EXPERIENCE</u></h4></div>';   
 	
 	pagecontent += "<p><li>I am highly experienced with managing proactive and reactive tasks, and supporting all layers of customer's multi-tiered cloud enterprise apps systems and on-premises apps in production environments, managing, monitoring, system administration, troubleshooting/ debugging and resolving complex issues in various AI-driven cloud-based PaaS, SaaS, IDaaS, XaaS, IaC platforms (i.e. IAM, AWS, workflow automation platforms, SIEM and SOAR security analytics platforms).</li></p>";
@@ -122,8 +123,7 @@
     this.content.innerHTML = pagecontent; 
     
     this.headerDescription.innerHTML = "About Me"; 
-
-}
+}	
 
 // Project page		
 function projectPage(){
@@ -156,6 +156,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
