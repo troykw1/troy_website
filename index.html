@@ -118,7 +118,7 @@
                     '<tr>' +
                         '<td><a href="#Work">View Summary of my work experience</a></td>' +
 
-						'<td><a href="#Python">Python</a> | <a href="#apisdk">APIs and SDKs</a></td>' + 
+						'<td><a href="#Python">Python</a> | <a href="#apisdk">APIs and SDKs</a> | <a href="#Workflows">Workflows</a></td>' + 
 		
                         '<td><a href="#Certifications">View Certifications</a></td>' +
 						'<td><a href="#Accomplishments">Accomplishments</a></td>' +
@@ -164,7 +164,28 @@
 	pagecontent += "<li>Built secure web apps using RESTful APIs, OIDC and OAuth 2.0 flows and SDKs to integrate Okta into custom applications.</li>";
 	pagecontent += "<li>Implemented Single Sign-On (SSO), configured authorization with API Access Management, Okta's identity services for user management and lifecycle, and Role-Based Access Control (RBAC) within Okta.</li>";
 	pagecontent += "<li>Configured Authorization Servers, Scopes, and Claims for clean, secure access management.</li>";
-		
+
+	// workflows - skills 
+	pagecontent += '<div id="Workflows" style="clear:both; padding-top: 15px;"><h4>Workflows</h4></div>';
+	pagecontent += "Built if-this-then-that automated processes within the Okta Identity Engine, automated identity-related tasks (i.e. user onboarding/offboarding) using event/action/function logic, console navigation, core concepts, connections, inputs/outputs, and conditionals.";	
+
+	pagecontent += '<u>Some examples of the Workflow use cases I provided end-to-end solutions for</u>';
+
+	pagecontent += "<li>Workflow is not recording log in attempts and is not triggering Event Hooks based on event types user.authentication.sso and user.session.start tied to using OIDC app that uses Jamf with MacOS device.</li>";
+	pagecontent += "<li>Workflows Helper Flow (with For-Each and Streaming Cards).</li>";
+	pagecontent += "<li>How to use a Workflow that will change a users attribute after their password expires.</li>";
+	pagecontent += "<li>Workflow History Inspector is not showing data flow such as the email value in Slack action card.</li>";
+	pagecontent += "<li>Self Registration Workflow cannot create an Office 365 Mail connection to authorize from Oktas FedRamp Workflows FG1 cell to Microsoft GCC (FedRamp Moderate) infratructurture.</li>";
+	pagecontent += "<li>Update Workflows to use Okta Device event cards.</li>";
+	pagecontent += "<li>How to setup Admin account tied to a service account to give access to the Workflows console page.</li>";
+	pagecontent += "<li>Can't activate and turn a Workflow on due to Webhook registration failed.</li>";
+	pagecontent += "<li>Can't access Delegated Workflows connector.</li>";
+	pagecontent += "<li>Telephony Inline Hook use cases.</li>";
+	pagecontent += "<li>Can't authorize the connection to Slack app in Workflows console.</li>";
+	pagecontent += "<li>App that uses Profile Enrollment form for Self-service registration (tied to Workflows Inline Hook) does not work when user fills out Self Registration form to add a new user</li>";
+	pagecontent += "<li>How to prevent the reoccurrence where refresh token that was issued to Self registration Workflow (tied to Inline Hook) gets invalidated.</li>";
+
+	// Certififcations 	
     pagecontent += '<div id="Certifications" style="clear:both; padding-top: 15px;"><h4>Certifications</h4></div>';
 	
 	pagecontent += "<i>2022 to 2025</i><br>";
@@ -281,6 +302,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
