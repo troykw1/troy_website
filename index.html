@@ -11,18 +11,24 @@
     <style>
 
 // drop menu 		
-.dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none; /* Hidden by default */
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.dropdown-content a { color: black; padding: 12px; text-decoration: none; display: block; }
-.dropdown-content a:hover { background-color: #f1f1f1; }
-.dropdown:hover .dropdown-content { display: block; } /* Hover alternative */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+/* Class added by JS to show the menu */
+.show {
+    display: block;
+}
 
 		table, th, td {
   			border: 3px solid white;
@@ -95,13 +101,13 @@
     </section>
     <footer></footer>
 
-	<script>
+<script>
 // Toggle dropdown on click
-function toggleDropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
+function toggleDropdown(menuId) {
+    document.getElementById(menuId).classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
+// Optional: Close the menu if clicked outside
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -114,6 +120,7 @@ window.onclick = function(event) {
     }
 }
 </script>
+
 
     <script>
 // Home Page
@@ -294,6 +301,7 @@ document.onload=homePage();
 
 
 </html>
+
 
 
 
