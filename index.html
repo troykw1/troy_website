@@ -87,21 +87,20 @@ function homePage() {
     var pagecontent = "Welcome to Troy's website, I hope you enjoy it.<br>";
     pagecontent += "<img src='arrowiconsm.jpg'> Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page <br><br><br><br></a>";
 
-	// project images - updated table width
-    pagecontent += "<table style='width: 50%; border-collapse: collapse; text-align: left;'>" +
+    // REMOVED 'width: 50%' from table to prevent stretching
+    pagecontent += "<table style='border-collapse: collapse; text-align: left;'>" +
         "<tr>" +
-            "<td style='width: 25%; padding: 5px;'>" +
-                // Set to exactly 100x96 pixels
+            // REMOVED 'width: 25%' and added 10px padding for a natural gap
+            "<td style='padding: 10px;'>" +
                 "<img src='projects_python.png' alt='Python Projects' style='width: 100px; height: 96px;'>" +
             "</td>" +
-            "<td style='width: 25%; padding: 5px;'>" +
-                // Set to exactly 100x96 pixels (Note: fixed typo in filename from your prompt)
+            "<td style='padding: 10px;'>" +
                 "<img src='projects_javascript.png' alt='JS Projects' style='width: 100px; height: 96px;'>" +
             "</td>" +
         "</tr>" +
         "<tr>" +
             "<td colspan='2' style='padding: 5px;'>" +
-           //     "Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page</a>" +
+                // "Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page</a>" +
             "</td>" +
         "</tr>" +
     "</table>";
