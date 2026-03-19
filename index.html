@@ -84,18 +84,18 @@
 // Home Page
 		
 function homePage() {
-    // 1. Initial content (Note the += and added quotes)
     var pagecontent = "Welcome to Troy's website, I hope you enjoy it.<br>";
     pagecontent += "<img src='arrowiconsm.jpg'> Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page <br><br><br><br></a>";
 
-    // 2. The Table (Using += ensures you don't overwrite the text above)
     pagecontent += "<table style='width: 100%; border-collapse: collapse; text-align: center;'>" +
         "<tr>" +
             "<td style='width: 50%; padding: 10px;'>" +
-                "<img src='projects_python.png' alt='Python Projects' style='width: 100%; height: auto;'>" +
+                // Set to exactly 100x96 pixels
+                "<img src='projects_python.png' alt='Python Projects' style='width: 100px; height: 96px;'>" +
             "</td>" +
             "<td style='width: 50%; padding: 10px;'>" +
-                "<img src='projects_javascript.png' alt='JS Projects' style='width: 100%; height: auto;'>" +
+                // Set to exactly 100x96 pixels (Note: fixed typo in filename from your prompt)
+                "<img src='projects_javascript.png' alt='JS Projects' style='width: 100px; height: 96px;'>" +
             "</td>" +
         "</tr>" +
         "<tr>" +
@@ -105,11 +105,10 @@ function homePage() {
         "</tr>" +
     "</table>";
 
-    // 3. Render to the DOM
     this.content.innerHTML = pagecontent;
     this.headerDescription.innerHTML = "Home Page";
 }
-	
+
 		
 // About Me page
 	function aboutmePage(){
