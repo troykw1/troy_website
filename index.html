@@ -83,42 +83,33 @@
     <script>
 // Home Page
 		
-	function homePage() {
+function homePage() {
+    // 1. Initial content (Note the += and added quotes)
     var pagecontent = "Welcome to Troy's website, I hope you enjoy it.<br>";
-    
-    pagecontent += "<img src='arrowiconsm.jpg'> Please visit my <a onclick='projectPage();'>Projects page <br><br><br><br></a>";
+    pagecontent += "<img src='arrowiconsm.jpg'> Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page <br><br><br><br></a>";
 
-    pagecontent = '<table style="width: 100%; border-collapse: collapse; text-align: center;">' +
-        '<tr>' +
-            // Python Image on the Left
-            '<td style="width: 50%; padding: 10px;">' +
-                '<img src="projects_python.png" alt="Python Projects" style="width: 100%; height: auto;">' +
-            '</td>' +
-            // JavaScript Image on the Right
-            '<td style="width: 50%; padding: 10px;">' +
-                '<img src="projects_javascript.png" alt="JS Projects" style="width: 100%; height: auto;">' +
-            '</td>' +
-        '</tr>' +
-        '<tr>' +
-            '<td colspan="2" style="padding: 10px;">' +
-                'Please visit my <a href="#" onclick="projectPage(); return false;">Projects page</a>' +
-            '</td>' +
-        '</tr>' +
-    '</table>';
-		
-	// pagecontent += "<hr style=\"margin: 30px 0; border: 0; border-top: 1px solid #ddd;\">";
-		
-	// Updated this 
-	// pagecontent += "<i>This web application I built uses JavaScript, Node.js, PostgreSQL and REST API.</i><br>";
-	// pagecontent += "<i>The server-side logic is handled by a Node.js runtime environment using Express framework.</i><br>";	
-    // pagecontent += "<i>The communication between the client and server is facilitated by a RESTful API, which uses standard HTTP methods: GET, POST, PUT, DELETE to perform CRUD operations.</i><br>";
-    // pagecontent += "<i>The API interacts with PostgreSQL relational database using node-postgres client library to manage and persist data.</i>";
-		
-	// Assuming this.content refers to the DOM element where content is rendered
-    this.content.innerHTML = pagecontent; 
-    
-    this.headerDescription.innerHTML = "Home Page"; 
-}	
+    // 2. The Table (Using += ensures you don't overwrite the text above)
+    pagecontent += "<table style='width: 100%; border-collapse: collapse; text-align: center;'>" +
+        "<tr>" +
+            "<td style='width: 50%; padding: 10px;'>" +
+                "<img src='projects_python.png' alt='Python Projects' style='width: 100%; height: auto;'>" +
+            "</td>" +
+            "<td style='width: 50%; padding: 10px;'>" +
+                "<img src='projects_javascript.png' alt='JS Projects' style='width: 100%; height: auto;'>" +
+            "</td>" +
+        "</tr>" +
+        "<tr>" +
+            "<td colspan='2' style='padding: 10px;'>" +
+                "Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page</a>" +
+            "</td>" +
+        "</tr>" +
+    "</table>";
+
+    // 3. Render to the DOM
+    this.content.innerHTML = pagecontent;
+    this.headerDescription.innerHTML = "Home Page";
+}
+	
 		
 // About Me page
 	function aboutmePage(){
