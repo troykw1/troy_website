@@ -8,8 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
