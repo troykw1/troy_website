@@ -1,5 +1,5 @@
-const express = require('express'); // Import the express dependency
 const path = require('path');       // Import path module for working with file paths
+const express = require('express'); // Import the express dependency
 const bodyParser = require('body-parser'); // Import body-parser to parse form data
 const app = express();              // Instantiate an express app
 const port = process.env.PORT || 3000;               // Save the port number where your server will be listening
@@ -9,8 +9,10 @@ const port = process.env.PORT || 3000;               // Save the port number whe
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the current directory
-app.use(express.static(__dirname));                       
+// app.use(express.static(__dirname));                       
 // app.use(express.static(path.join(__dirname, 'public'), { index: 'home.html' }));
+
+app.use(express.static(path.join(__dirname, '.')));
 
 // Home Page 
 // app.get('/', (req, res) => {
@@ -19,8 +21,11 @@ app.use(express.static(__dirname));
     
 // Route for the root URL
 app.get('/', (req, res) => {                         
-  res.sendFile('index.html', { root: __dirname });      
+//  res.sendFile('index.html', { root: __dirname });      
   // res.sendFile(__dirname + '/views/home.html'); // or wherever your home page file is
+
+    // Using path.join handles the absolute pathing for Vercel's environment
+  res.sendFile(path.join(__dirname, 'index.html'));
 
 });                                                            
 
