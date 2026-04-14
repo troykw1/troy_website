@@ -8,6 +8,9 @@ const port = process.env.PORT || 3000;               // Save the port number whe
 // app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Serve images from the /images directory
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 // Serve static files from the current directory
 // app.use(express.static(__dirname));                       
 // app.use(express.static(path.join(__dirname, 'public'), { index: 'home.html' }));
