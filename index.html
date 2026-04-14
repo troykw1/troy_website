@@ -325,12 +325,13 @@ this.content.innerHTML=pagecontent;
 
 // Contact me page	
 function contactPage(){
-var pagecontent="Please send me a mesage<a href='Contact/index.html' by clicking here </a> to fill out the form.";
-this.content.innerHTML=pagecontent;
- this.headerDescription.innerHTML='Contact Page';
+  var pagecontent = "Please send me a message by <a href='/Contact/'>clicking here</a> to fill out the form.";
+  
+  this.content.innerHTML = pagecontent;
+  this.headerDescription.innerHTML = 'Contact Page';
 }
 
-document.onload=homePage();
+window.addEventListener('load', homePage);
 
     </script>
 
