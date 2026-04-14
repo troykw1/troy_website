@@ -2,7 +2,7 @@ const express = require('express'); // Import the express dependency
 const path = require('path');       // Import path module for working with file paths
 const bodyParser = require('body-parser'); // Import body-parser to parse form data
 const app = express();              // Instantiate an express app
-const port = 3000;                  // Save the port number where your server will be listening
+const port = process.env.PORT || 3000;               // Save the port number where your server will be listening
 
 // Middleware to parse form data
 // app.use(express.json());
