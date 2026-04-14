@@ -1,8 +1,0 @@
-https://learn.microsoft.com/en-us/visualstudio/docker/tutorials/docker-tutorial-share
-
-cd C:\Users\troyk\source\repos\TroyWebApp\getting-started-master\app\dockerfile 
-
-docker run -dp 3000:3000 getting-started
-
-Docker username: troykw1@gmail.com
-Docker pwd: M..r!
