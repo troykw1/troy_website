@@ -1,0 +1,49 @@
+
+*** How to Insert Data from a CSV File into PostgreSQL Using Node.js and PGP
+---> Do this as your Project 
+https://medium.com/@aleksej.gudkov/how-to-insert-data-from-a-csv-file-into-postgresql-using-node-js-and-pgp-069841308d75#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjI1ZjgyMTE3MTM3ODhiNjE0NTQ3NGI1MDI5YjAxNDFiZDViM2RlOWMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTc3NjMwMzA3MjQzNjM0NzY5MDYiLCJlbWFpbCI6InRyb3lrdzFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc0MTA1MzY3MCwibmFtZSI6IlRyb3kgfiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NMX2hXcnpYZC1uTHRiZ001WkE5RDZ2QWwtQlh2NmRrN1lqc0kwdlJnSWRCblQzOUNZPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlRyb3kiLCJmYW1pbHlfbmFtZSI6In4iLCJpYXQiOjE3NDEwNTM5NzAsImV4cCI6MTc0MTA1NzU3MCwianRpIjoiNzgzNDcyMTMyZjIwZGMxODI3Y2QxMzcyODk0NDEzNmQ1ZGQ5NGJkNCJ9.lClXBm8y6fDxtFFQDtAuIr7cokdCgBxw9K9cIK6aDD6H62fj8XYddt-zTIr09YJ2zCnWkZDDfvvh5y_AcA4VQRgb1q9v9lfzfzTOpOXfNh6OaJs141pFMcmYhJ9pIovuUhnAX4QcbbD-GJmKcRAR-w8ihrsYocrTsWm5kdKYOzZ3vpr5pRPppPRTc4ztatKRJo4lmED59-j60OVqHsnWB83YolsA__M3Azf-97YAdyegs_s8NU2cwXke7-Wfcb98JaDXDIDKZdvXVdER1DXIK54TJq2WRJpd--uIw20k0GbM8_zjQNBoetWzDoH1wox_Ll145wWtsLF922W--DuQCg
+
+1. Created folder "Csvtopostgres"
+2. cd csv-to-postgres 
+3. npm init -y
+4. npm install pg-promise csv-parser
+5. Create a file db.js
+
+6. Prepare the CSV File "data.csv"
+Ensure your CSV file (data.csv) has a structure compatible with your database table. Example CSV content:
+
+id,name,email
+1,Joe Donald,joe.donald@example.com
+2,Janet South,janet.south@example.com
+3,Samuel Wilder,sam.wilder@example.com
+
+7. Create the Database Table "customers"
+Run the following SQL script to create a table for the CSV data:
+
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL
+);
+
+8. Create a file index.js:
+
+9. Run the Script
+node index.js
+
+DELETE FROM customers;
+
+==============================================================
+
+Neon is considered an SQL database, as it is a serverless implementation of PostgreSQL, which is a relational database that uses SQL for querying data; essentially, you interact with Neon using standard SQL commands through its SQL editor. 
+Key points about Neon:
+Based on PostgreSQL:
+Neon is built on top of PostgreSQL, allowing you to use the same SQL syntax and functionality. 
+Serverless architecture:
+Neon provides a serverless experience, automatically scaling up and down based on usage. 
+SQL editor:
+Users can manage their Neon databases and run queries directly through an integrated SQL editor. 
+
+how to insert data in postgresql using node js
+https://www.google.com/search?q=how+to+insert+data+in+postgresql+using+node+js&sca_esv=cf8f2fd86c54593d&sxsrf=AHTn8zr_7eYK0aiBnyN8NsutSISDGH5dXQ%3A1741053332776&ei=lF3GZ82OL9Gsur8P7tXn4A8&oq=how+to+inject+data+into+postgresql+using+&gs_lp=Egxnd3Mtd2l6LXNlcnAiKWhvdyB0byBpbmplY3QgZGF0YSBpbnRvIHBvc3RncmVzcWwgdXNpbmcgKgIIAzIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSMWxAVChDljUjAFwBngBkAEAmAF0oAH5GqoBBDQzLjG4AQHIAQD4AQGYAjKgArYdwgIKEAAYsAMY1gQYR8ICCxAAGIAEGJECGIoFwgIOEC4YgAQYsQMY0QMYxwHCAgsQABiABBixAxiDAcICDhAuGIAEGLEDGIMBGIoFwgILEC4YgAQY0QMYxwHCAhEQLhiABBixAxjRAxiDARjHAcICFBAuGIAEGMcBGJgFGJkFGJ4FGK8BwgIFEAAYgATCAgsQLhiABBixAxjUAsICDhAAGIAEGLEDGIMBGIoFwgIKEAAYgAQYQxiKBcICCBAuGIAEGNQCwgIIEAAYgAQYsQPCAgcQIRigARgKwgIFECEYqwKYAwCIBgGQBgiSBwQ0NC42oAeangM&sclient=gws-wiz-serp
+

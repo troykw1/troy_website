@@ -1,0 +1,31 @@
+OpenEDG
+user: email ; pwd: M1..!
+
+https://edube.org/study/catalog/javascript-essentials-1-aligned-with-exam-jse-40-01/my-progress
+
+Left off here
+1.2.1.6 Setting up programming environment - Interpreter
+
+============================================
+
+Now it’s much more than that, as JavaScript offers many great frameworks on which to build huge, complex web applications and social networks (you've probably heard the names of frameworks like React or Angular).
+
+All this can work on a variety of equipment, from high-performance workstations to simple smartphones. Thanks to the power of JavaScript, we can order food, play browser-based games, watch movies on streaming platforms, and be in constant contact with the people important to us. JavaScript is so popular that continually more and more effort goes into using it, not only as a client-side solution.
+
+Over time, JavaScript began to appear in other areas, such as programming the server-side parts of complex web applications, also called back-end. 
+These programs are executed on servers, processing data (e.g. from databases), which after processing will be available on the client side. 
+The flexibility of this language and its relative simplicity have made it much more applicable, for example, in mobile apps, or even in programming UAVs 
+(some drones run programs written in this language).
+
+TypeScript was introduced.
+
+Remember also that if you learn to program in one language, it will usually be much easier for you to learn the next one, which for some reason may be better to solve a particular problem.
+
+But let’s start now with JavaScript, which, due to its flexible and simple syntax, is perfect to learn as a first language.
+
+Among JavaScript programmers, the most popular are the following:
+
+JSFiddle
+CodePen
+JsBin
+Plunker

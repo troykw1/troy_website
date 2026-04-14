@@ -1,0 +1,60 @@
+Go to: Dashboard > Project > troywebapp 
+
+** Website:
+Service name > "troywille_website"
+
+URL:
+https://troywille-website.onrender.com
+
+======================
+
+** Postgres
+
+Hostname:
+dpg-d6m7hmvgi27c73du3cdg-a
+
+Port:
+5432
+
+Database:
+test_z25z
+
+Username:
+admin
+
+Password:
+DTD9Y1won3VjoPyh2Dbis6NQWBTKyWDQ
+
+Internal DB URL:
+postgresql://admin:DTD9Y1won3VjoPyh2Dbis6NQWBTKyWDQ@dpg-d6m7hmvgi27c73du3cdg-a/test_z25z
+
+External DB URL:
+postgresql://admin:DTD9Y1won3VjoPyh2Dbis6NQWBTKyWDQ@dpg-d6m7hmvgi27c73du3cdg-a.oregon-postgres.render.com/test_z25z
+
+PSQL command:
+PGPASSWORD=DTD9Y1won3VjoPyh2Dbis6NQWBTKyWDQ psql -h dpg-d6m7hmvgi27c73du3cdg-a.oregon-postgres.render.com -U admin test_z25z
+
+===================
+
+This is what I submitted on 03/07/26 
+
+Name
+"troy-postgresql-test"
+
+Project
+"troywebapp"
+
+dbname: test
+User: admin
+
+PostgreSQL Version: 18
+
+
+tables:
+contact
+customers	
+employees
+users
+
+==============
+

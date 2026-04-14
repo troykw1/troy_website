@@ -1,0 +1,10 @@
+
+Yes, the default user will have a lot of privileges, but it’s not a superuser.
+https://community.render.com/t/permissions-setting-in-postgresql-database/6892/3
+
+-- Login as Super User 
+psql -h dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com -p 5432 -U postgres -d test_56z1 
+
+CREATE ROLE troy WITH SUPERUSER LOGIN PASSWORD 'M1n1c00per!';
+
+GRANT ALL PRIVILEGES ON TABLE contacts TO troy;

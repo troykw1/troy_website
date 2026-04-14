@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=Cc9d2c8UuKA
+
+See VSC > Plugins > PostgreSQL
+
+Click on icon at VSC -- added new connection to PostgreSQL 
+
+SELECT * FROM contact;
+SELECT * FROM customers;
+SELECT * FROM users;

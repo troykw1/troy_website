@@ -1,0 +1,119 @@
+https://dev.to/fredabod/a-simple-nodejs-app-using-postgres-and-express-2179 
+
+I. To create a user > run POST http://localhost:3000/users
+
+{
+  "name": "Terry Squire",
+   "email" : "terrysquire@gmail.com"
+  }
+
+II. To get users > run GET http://localhost:3000/get_users 
+  
+III. To update a user > run PUT http://localhost:3000/users/terrysquire@gmail.com
+(we input the user's id in the path variable and do a PUT request)  
+
+ {
+ "name": "Terrie Squire"
+ }
+ 
+IV. To delete a user > run DELETE http://localhost:3000/users/terrysquire@gmail.com 
+  
+========================
+
+1) Now create your database CREATE DATABASE test. 
+---> I did this via Console in pgAdmin
+
+2) To confirm your list of database use 
+\l
+
+3) Now we'll tell our laptop on cmd we want to use the test database
+ \c test
+ 
+4) Now create a table called "users" with columns id, name and email
+---> I inserted this into the commnad line 
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL
+);
+
+\l  Lists all available databases on the server 
+\c <database_name>: Switches to the specified database 
+
+5) Now we seed a dummy data into the table
+---> I inserted this into the commnad line 
+
+INSERT INTO users (name, email)
+VALUES
+    ('John Rather', 'john.rather@example.com'),
+    ('Jane Smith', 'jane.smith@example.com');
+
+6) SELECT * FROM users;
+
+ id |    name    |         email
+----+------------+------------------------
+  1 | John Doe   | john.doe@example.com
+  2 | Jane Smith | jane.smith@example.com
+(2 rows)
+
+7) Create a folder, and give it any name of your choice, mine is Src. 
+Then create the entry file mine is index.js
+
+a) Created folder called "Src" > \TroyWebApp\troy\Src
+b) cd Src 
+c) npm init -y
+d) npm I express morgan pg
+
+---> npm install express
+---> npm install morgan 
+
+---> I then ran: npm i express morgan pg
+
+8) node index.js
+
+9) In Postman
+
+To create a user http://localhost:3000/users for a POST request, I use postman to test my endpoints
+
+POST http://localhost:3000/users
+
+Body 
+
+{
+    "id": 8,
+    "name": "Tobiloba",
+    "email": "bolu@gmail.com"
+}
+
+{
+    "id": 8,
+    "name": "Carla Tully",
+    "email": "carlatully@gmail.com"
+}
+
+
+
+I generated an API key 
+https://learning.postman.com/docs/developer/postman-api/authentication/
+
+10) In Postman
+
+GET http://localhost:3000/get_users
+
+Shows all users in Postgres DB
+
+11) In Postman
+
+PUT http://localhost:3000//users/:id
+
+we input the user's id in the path variable and do a PUT request
+
+===========================
+
+CREATE TABLE contacts (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+	message VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL
+);

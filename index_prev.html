@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Troy K. Wille's website</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no' />
+    <meta name="theme-color" content="#328db5" />
+    <meta name="navigation-bar-button-color" content="#328db5" />
+    <meta name="navigation-bar-button-border-color" content="#ffffff" />
+    <meta name="navigation-bar-button-hasshadow" content="true" />
+    <style>
+
+		table, th, td {
+  			border: 3px solid white;
+  			border-collapse: collapse;
+		}
+		th, td {
+  			background-color: white;
+		}
+		
+        body {
+            font-family: Verdana, sans-serif;
+            font-size: 0.8em;
+            margin: 0px;
+        }
+
+        a {
+            cursor: pointer;
+            color: steelblue;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 5px;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        nav, section, article {
+            margin: 5px;
+            padding: 8px;
+        }
+
+        header {
+            background-color: #328db5;
+        }
+
+        #headerDescription {
+            margin: 5px;
+            padding: 8px;
+            ;
+            margin-top: 0;
+            color: white;
+        }
+
+        #content {
+            margin-left: 5px;
+            margin-right: 5px;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id='headerDescription'></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a onclick='homePage();'>Home Page</a></li>
+			<li><a onclick='aboutmePage();'>About Me</a></li>
+			<li><a onclick='projectPage()'>Projects</a></li>
+			<li><a onclick='blogPage()'>Blogg</a></li>
+            <li><a onclick='contactPage()'>Contact me</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id='content'></article>
+    </section>
+    <footer></footer>
+
+    <script>
+// Home Page
+		
+	function homePage(){
+    var pagecontent = "Welcome to <b>Troy K. Wille's</b> website, I hope you enjoy it. <br><br> I'm a seasoned, dynamic, collaborative IT professional with a focus on delivering exceptional end-to-end solutions and customer experiences by delivering value to customers.<br>";
+	
+  	// pagecontent += "<img src="arrowiconsm.jpg" alt="arrow"> Please visit <a onclick="aboutmePage();" style="cursor:pointer; color:blue;">About Me page</a> that lists the Summary of my work experience and skills.";
+		
+	pagecontent += "<p>I have vast experience in:</p>";
+    pagecontent += "<p><li>Client-side customer technical, application and developer product support, and technical account management from purchase to production.</li></p>";
+	pagecontent += "<p><li>Managing ongoing customer needs effectively to ultimately drive high customer retention and loyalty.</li></p>";
+	pagecontent += "<p><li>Building and fostering long term customer and user relationships, providing customers with ad-hoc training, providing product demonstrations.</li></p>";
+	pagecontent += "<p><li>Leading user and customer facing meetings and presentations with large groups of people.</li></p>";
+	pagecontent += "<p><li>Working cross-functionally both internally and within my organization's user facing teams to provide and implement operational solutions and working with various multi-disciplinary teams.</li></p>";
+	pagecontent += "<p><li>Providing technical recommendations and best practices for solutions based on customers' needs.</li></p>";
+	pagecontent += "<p><li>Planning, strategizing roll-outs and upgrades for platform adoption by the customer.</li></p>";
+	pagecontent += "<p><li>Facilitating visibility into company’s product roadmap to help educate and engage customers with feature requests.</li></p>";
+	pagecontent += "<p><li>Creating and publishing user-facing content with Problem Identification and Solution.</li></p><br>";
+	
+	// Assuming this.content refers to the DOM element where content is rendered
+    this.content.innerHTML = pagecontent; 
+    
+    this.headerDescription.innerHTML = "Home Page"; 
+}
+		
+// About Me page
+	function aboutmePage(){
+	var pagecontent = '<table style="border: 1px solid white; width: 100%;">' +
+                    '<tr>' +
+                        '<th>Summary of my work experience</th>' +
+                        '<th>Demonstrated Skills</th>' +
+                        '<th>Certifications</th>' +
+						'<th>Accomplishments</th>'              +
+                    '</tr>' +
+                    '<tr>' +
+                        '<td><a href="#Work">View Summary of my work experience</a></td>' +
+
+						'<td><a href="#apisdk">APIs & custom application integrations</a> | <a href="#Python">Python</a> | <a href="#JavaScript">JavaScript</a> | <a href="#Workflows">Workflows</a> | <a href="#Playbooks">Playbooks</a></td>' + 
+		
+					//	'<td><a href="#Python">Python</a> | <a href="#apisdk">APIs & custom application integrations</a> | <a href="#Workflows">Workflows</a> | <a href="#Playbooks">Playbooks</a></td>' + 
+		
+                        '<td><a href="#Certifications">View Certifications</a></td>' +
+						'<td><a href="#Accomplishments">Accomplishments</a></td>' +
+                    '</tr>' +
+                   '</table>';  
+				   
+    pagecontent += '<div id="Work" style="clear:both; padding-top: 15px;"><h4>SUMMARY OF MY WORK EXPERIENCE</h4></div>';
+			
+	pagecontent += "<p><li>Supporting all layers of customer's multi-tiered cloud enterprise apps systems and on-premises apps in production environments.</li></p>";
+	pagecontent += "<p><li>Managing, monitoring, system administration, troubleshooting/ debugging and resolving complex issues in various AI-driven cloud-based PaaS, SaaS, IDaaS, XaaS, IaC platforms <br> (i.e. IAM, AWS, workflow automation platforms, SIEM and SOAR security analytics platforms).</li></p>";
+	pagecontent += "<p><li>Data and log analysis troubleshooting, monitoring and analyzing the complete flow of log event data from a wide variety of data sources to customer's cloud-based platforms to support a multitude of use cases and end-to-end solutions; <br> this includes components (Relays, Cloud collectors), and these data sources: REST APIs and API service integrations, flows, app integrations (M365, Okta, AWS, Box, Google Workspace, etc.), <br> Cloud services (AWS, GCP, MS Azure, GitHub, etc.), Event Load Balancers with HTTP endpoints (Event/Stream modes with 4 tagging levels), <br> databases, custom logs, flat files, directories (AD, LDAP), profile sourcing, various agents, various connectors, imports, import sets, <br> protocols (SCIM, Inbound SAML, OAuth 2.0, OIDC, REST APIs, JDBC, Syslog (TCP/UDP).</li></p>";
+	pagecontent += "<p><li>Software Development Lifecycle (SDLC): deployments, Bug, Tasks, Feature Requests, Problem, Product, Project and Release management) to support and deliver end-to-end solutions.</li></p>";
+	pagecontent += "<p><li>Troubleshooting and providing app root cause analysis and app solution management with app customizations (out-of-box solutions) and app development use cases with database programming <br> and scripting (SDKs, JavaScript, Node.js, Python, SpEL, SQL, LINQ, SPL).</li></p>"; 
+	pagecontent += "<p><li>Using various architectural flows and frameworks.</li></p>"; 
+	pagecontent += "<p><li>Using DevOps tools such as Docker, Kubernetes and GitHub (CI/CD pipelines), and AI agents and LLMs.</li></p>"; 
+	pagecontent += "<p><li>Supporting various uses cases tied to customers' cloud-based platform and integrated cloud apps, supporting integrated issues tied to Operating Systems <br>(Linux, Windows, macOS, Android), distributed systems, networking, IAM, Cybersecurity, security alerts and notifications, <br> Lifecycle management LCM, CRUD operations and ETL use cases, device integrations, device trust/device management using MDM/UEM.</li></p>";
+	pagecontent += "<p><li>Managing proactive and reactive tasks.</li></p>";
+	pagecontent += "<p><li>Serving as a dedicated technical point for several key clients, as well as an escalation point within my team.</li></p>";
+	pagecontent += "<p><li>Managing ongoing customer needs effectively to ultimately drive high customer retention and loyalty.</li></p>";
+	pagecontent += "<p><li>Building and fostering long term customer and user relationships, providing customers with ad-hoc training, providing product demonstrations.</li></p>";
+	pagecontent += "<p><li>Leading user and customer facing meetings and presentations with large groups of people.</li></p>";
+	pagecontent += "<p><li>Working cross-functionally both internally and within my organization's user facing teams to provide and implement operational solutions and working with various multi-disciplinary teams.</li></p>";
+	pagecontent += "<p><li>Providing technical recommendations and best practices for solutions based on customers' needs.</li></p>";
+	pagecontent += "<p><li>Planning, strategizing roll-outs and upgrades for platform adoption by the customer.</li></p>";
+	pagecontent += "<p><li>Facilitating visibility into company’s product roadmap to help educate and engage customers with feature requests.</li></p>";
+	pagecontent += "<p><li>Creating and publishing user-facing content with Problem Identification and Solution.</li></p><br>";
+
+	// Python - skills 	
+	pagecontent += '<div id="Python" style="clear:both; padding-top: 15px;"><h4>Python</h4></div>';
+
+	// Python 
+	pagecontent += "<u>Python</u> (Devo Collector SDK for Python) <br>";	
+	pagecontent += "I suppoted various use cases for Devo Collector SDK for Python that ingests data from various cloud data sources into the Devo SIEM platform.";	
+	pagecontent += "<li>I troubleshooted, tested, debugged client-side/server-side errors in Python code for Cloud Collector apps cloud services/data sources, leveraged GitLab repositories to analyze collector vendor code logic.</li>";
+	pagecontent += "<li>I provided reactive root cause and resolution expertise and proactive preventive measures against client-side/server-side errors tied to such issues as data format incompatibilities, empty source data, misconfigured service parameters in YAML/JSON object, codec decoding errors due to payload mismatches, data ingestion logic failures, API logging behavior, 1st/2nd/3rd table/tag not getting created/ ingested tied to various collectors, to name a few.</li>";
+	pagecontent += "<li>I provided end-to-end solutions for various cloud collector app issues such as authentication, authorization, permissions, network and environment, API rate limiting, AWS: AWS CloudTrail, AWS CloudWatch, AWS GuardDuty, <br> IAM role tied to SQS collector not authorized to perform kms:Decrypt action on KMS key, can't pull AWS Security Hub events logs from AWS SQS collector, restrict IAM policies for AWS CloudTrail to specific cloud trail ARN, filter out logs for AWS SQS collector [CloudTrail->SQS->AWS SQS collector->Event load balancer] to match specific eventName values, etc.) API endpoint and data source issues and various client-side/server-side errors returning in Python code.</li>";
+	pagecontent += "<li>I created custom collector requests, various Bug Defects against Cloud Collector app issues I tested, worked with Software Engineers to release new version code fix, utilized GitLab actions for CI/CD pipelines to validate fixes, reviewed code changes, and verified with customer that new release fixed issue.</li>";
+
+	// APIs and SDKs - skills 
+	pagecontent += '<div id="apisdk" style="clear:both; padding-top: 15px;"><h4>APIs and SDKs</h4></div>';
+	
+//  pagecontent += "<u>APIs and SDKs</u><br>";	
+	pagecontent += "<li>Built secure web apps using RESTful APIs, OIDC and OAuth 2.0 flows and SDKs to integrate Okta into custom applications.</li>";
+	pagecontent += "<li>Implemented Single Sign-On (SSO), configured authorization with API Access Management, Okta's identity services for user management and lifecycle, and Role-Based Access Control (RBAC) within Okta.</li>";
+	pagecontent += "<li>Configured Authorization Servers, Scopes, and Claims for clean, secure access management.</li>";
+
+	// workflows - skills 
+	pagecontent += '<div id="Workflows" style="clear:both; padding-top: 15px;"><h4>Workflows</h4></div>';
+	pagecontent += "Built if-this-then-that automated processes within the Okta Identity Engine, automated identity-related tasks (i.e. user onboarding/offboarding) using event/action/function logic, console navigation, core concepts, connections, inputs/outputs, and conditionals.<br><br>";	
+
+	pagecontent += '<u>Some examples of the Workflow use cases I provided end-to-end solutions for</u>';
+
+	pagecontent += "<li>Workflow is not recording log in attempts and is not triggering Event Hooks based on event types user.authentication.sso and user.session.start tied to using OIDC app that uses Jamf with MacOS device.</li>";
+	pagecontent += "<li>Workflows Helper Flow (with For-Each and Streaming Cards).</li>";
+	pagecontent += "<li>How to use a Workflow that will change a users attribute after their password expires.</li>";
+	pagecontent += "<li>Workflow History Inspector is not showing data flow such as the email value in Slack action card.</li>";
+	pagecontent += "<li>Self Registration Workflow cannot create an Office 365 Mail connection to authorize from Oktas FedRamp Workflows FG1 cell to Microsoft GCC (FedRamp Moderate) infratructurture.</li>";
+	pagecontent += "<li>Update Workflows to use Okta Device event cards.</li>";
+	pagecontent += "<li>How to setup Admin account tied to a service account to give access to the Workflows console page.</li>";
+	pagecontent += "<li>Can't activate and turn a Workflow on due to Webhook registration failed.</li>";
+	pagecontent += "<li>Can't access Delegated Workflows connector.</li>";
+	pagecontent += "<li>Telephony Inline Hook use cases.</li>";
+	pagecontent += "<li>Can't authorize the connection to Slack app in Workflows console.</li>";
+	pagecontent += "<li>App that uses Profile Enrollment form for Self-service registration (tied to Workflows Inline Hook) does not work when user fills out Self Registration form to add a new user</li>";
+	pagecontent += "<li>How to prevent the reoccurrence where refresh token that was issued to Self registration Workflow (tied to Inline Hook) gets invalidated.</li>";
+
+    // Playbooks - skills 
+	pagecontent += '<div id="Playbooks" style="clear:both; padding-top: 15px;"><h4>Playbooks</h4></div>';
+
+	pagecontent += "<li>I provided end-to-end solutions tied to various types of playbooks in AI-powered SOAR platform for various types of security use cases such as threat ingestion, investigation, triage, and remediation, <br> and custom application integrations such as ServiceNow, TE CyberDefOps, Web API, CrowdStrike Falcon Host (OAuth Based) > Get query job action and Get Execution Result action, and various API integrations.</li>"; 
+	pagecontent += "<li>I provided reactive and proactive end-to-solutions for SOAR platform issues tied to custom SOAR app and API integrations stemming from custom Python scripts, API calls, SQL scripts, <br> streams/ batches stuck in Queue tied to Playbook action flows, connection issues (remote agent in Windows and Linux, authentication, query action failure, networking), <br>Playbook action flows (errors viewing playbook flow, execution delays), case management (rendering component issues, alerts, API errors loading cases), and platform slowness.</li>";	
+		
+	// Certififcations 	
+    pagecontent += '<div id="Certifications" style="clear:both; padding-top: 15px;"><h4>Certifications</h4></div>';
+	
+	pagecontent += "<i>2022 to 2025</i><br>";
+    pagecontent += "<li>Okta Certified Developer certification.</li>";
+	pagecontent += "<li>Okta Certified Administrator certification.</li>";
+	pagecontent += "<li>Okta Certified Professional certification.</li>";
+	pagecontent += "<li>Workflows: Foundations for Flowgrammers certification.</li><br>";
+	
+	pagecontent += "<i>2025, Databricks Academy</i><br>";
+    pagecontent += "<li>Generative AI Fundamentals, Generative AI App Development, SQL Analytics and BI certificates.</li><br>";
+	
+	pagecontent += "<i>2003 to 2004, San Diego Community College</i><br>";
+	pagecontent += "<li>Certificate in Web programming & Interactive Media Web Design.</li>";
+	pagecontent += "Skills: ActionScript, JavaScript, XML, HTML, CSS<br><br>";
+	
+	pagecontent += "<i>2001 to 2002, Cisco Networking Academy</i><br>";
+	pagecontent += "<li>Certificate in Cisco Network Administration</li>";
+	pagecontent += "Certification #: 207040-177700-684381<br><br>"
+	
+	pagecontent += "<i>2000 to 2001, San Diego Community College</i><br>";
+	pagecontent += "<li>Certificate in Linux/ Apache Web Server Maintenance & Security. </li>";
+	pagecontent += "Skills: SQL/mySQL, Oracle, PHP, Linux, Apache web server, Java, JavaScript.<br><br>";
+	
+	pagecontent += "<i>1996 to 1999, California State University Los Angeles</i>";
+	pagecontent += "<li>Bachelor of Science in Business Administration.</li>";
+
+	// Accomplishments 	
+	pagecontent += '<div id="Accomplishments" style="clear:both; padding-top: 15px;"><h4>Accomplishments</h4></div>';
+
+	pagecontent += "<p><i><u>Achieved 100% customer annual renewals across all managed accounts.</p></i></u>";
+	pagecontent += "<li>I led video call meetings with external customers I managed (from a few people to 20 people), providing daily and weekly updates on all reported issues <br> that includes Bug Defects and requests I’ve created, new implementations and feature requests, and conducted live troubleshooting calls when needed.</li><br>";
+	pagecontent += "<li>Built and fostered long term customer and user relationships, providing customers with ad-hoc training and product demonstrations.</li><br>";
+	pagecontent += "<li>I provided strong <b>project mananagement</b> and <b>task management</b> against ongoing projects, by providing customer’s with updates to <br> Tasks, Change Requests, Product Defects, and viable work-arounds:</li>";
+ 	
+	pagecontent += "-Collected and analyzed customer’s business, systems, workflows, technical and data requirements.<br>";
+    pagecontent += "-Modified Use Cases to support functional & technical specifications.<br>"; 
+	pagecontent += "-I wrote specifications and process flow diagrams that were then incorporated into Jira requests.<br>";    
+	pagecontent += "-Worked with Product Development to define the project timeline scope and design.<br>"; 
+	pagecontent += "-Worked with Engineering to implement the new feature solution.<br>"; 
+	pagecontent += "-Performed software validation check for new software release to Configuration Management dept.<br>"; 
+
+	pagecontent += "-Served in software life cycle release project role where I managed customer's bug defect and new feature requests until they were fixed, and I delivered the new release to the customer.<br><br>";
+
+    pagecontent += "<li>Working as technical point of contact to key customers, I provided support to users/administrators of cloud platforms, troubleshooted unexpected behaviors and ensured successful resolution of challenging technical issues and requests, answered technical questions about Cloud platform use cases, and all core functionality.</li><br>";
+
+	pagecontent += "<li>Provided technical recommendations and best practices for solutions based on customers' needs.</li><br>";
+	pagecontent += "<li>Planned and strategized roll-outs and upgrades for platform adoption by the customer.</li><br>";
+	pagecontent += "<li>Facilitated visibility into company’s product roadmap to help educate and engage customers with feature requests.</li><br>";
+	pagecontent += "<li>Worked cross-functionally both internally and within my organization's user facing teams to provide and implement operational solutions where I worked with various multi-disciplinary teams such as Development and Engineering, Professional Services, Account Executives, Account Management and CSMs to drive completion of projects.</li><br>";
+		
+    // Assuming this.content refers to the DOM element where content is rendered
+    this.content.innerHTML = pagecontent; 
+    
+    this.headerDescription.innerHTML = "About Me"; 
+}
+
+// Project page	
+	function projectPage(){
+	var pagecontent = '<table style="border: 1px solid white; width: 100%;">' +
+                    '<tr>' +
+                        '<th>Projects with Node.js and JavaScript</th>' +
+                        '<th>Projects with Python</th>' +
+                    '</tr>' +
+                    '<tr>' +
+                        '<td><a href="#Node">View Node.js application with PostgreSQL and REST APIs.</a></td>' +
+                        '<td><a href="#Python">View Python projects.</a></td>' +
+						// '<td><a href="#Python">View Python projects.</td>' +
+                    
+                    '</tr>' +
+                   '</table>';  
+	
+	// Node 
+	pagecontent += '<div id="Node" style="clear:both; padding-top: 15px;"><h4>Node.js application with PostgreSQL and REST APIs</h4></div>';
+
+	pagecontent += "This website application I built uses JavaScript, Node.js, PostgreSQL and REST API.<br>";
+	pagecontent += "The server-side logic is handled by a Node.js runtime environment using Express framework.<br>";	
+    pagecontent += "The communication between the client and server is facilitated by a RESTful API, which uses standard HTTP methods: GET, POST, PUT, DELETE to perform CRUD operations.<br>";
+    pagecontent += "The API interacts with PostgreSQL relational database using node-postgres client library to manage and persist data.<br><br>";
+		
+	pagecontent += "<li>This Node.js application performs essential database and CRUD operations using REST API with standard HTTP methods: GET, POST, PUT, DELETE.</li>";
+    pagecontent += "<li>This Node.js application can insert data from a CSV fle into PostgreSQL database using Node.js.</li>";
+	pagecontent += "<li>This Node.js application Contact form parses and saves data into PostgreSQL database.</li>";
+
+	// Python 	
+    pagecontent += '<div id="Python" style="clear:both; padding-top: 15px;"><h4>Python projects.</h4></div>';
+
+	pagecontent += "<li>I use Python Psycopg2 package which is a PostgreSQL database adapter for Python, that I use with my Node.js web application.</li>";
+    pagecontent += "<li>This Python Psycopg2 package provides an API that allows me connect to PostgreSQL database tied to my Node.js web application, to perform database and CRUD operations, run various SQL commands and queries and manage transactions.</li>";
+		
+	this.content.innerHTML=pagecontent;
+	this.headerDescription.innerHTML='Project Page';
+}
+
+// Blogger page	
+function blogPage() {
+var pagecontent = "I enjoy creative writing as a hobby, and so I created a Blogg called <a href='http://tastytotalmeals.blogspot.com/' target='_blank'>Total Tasty Meals.</a> It's a space where I explore creative writing. It’s my, quite literally, tasty way to hone my creative writing skills.<br><br>Please visit <a href='http://tastytotalmeals.blogspot.com/' target='_blank'>Total Tasty Meals.</a> <br><br>My Blogg uses HTML, JavaScript and REST APIs.";
+
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Blogg Page';
+}
+
+// Contact me page	
+function contactPage(){
+var pagecontent="Please send me a mesage<a href='Contact/index.html' by clicking here </a> to fill out the form.";
+this.content.innerHTML=pagecontent;
+ this.headerDescription.innerHTML='Contact Page';
+}
+
+document.onload=homePage();
+
+    </script>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,223 @@
+
+https://community.render.com/t/connect-render-to-pgadmin4/7470
+
+postgresql://test_56z1_user:pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY@dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com/test_56z1
+
+psql -h dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com -p 5432 -U test_56z1_user -d test_56z1 
+
+-- Login as Super User 
+psql -h dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com -p 5432 -U postgres -d test_56z1 
+
+-- Grant Super user role to user test_56z1_user
+ALTER USER test_56z1_user WITH SUPERUSER
+
+GRANT EXECUTE ON FUNCTION pg_stat_file(text) TO test_56z1_user;
+
+Login as Super user 
+
+psql -U postgres -h  -p 5432
+
+GRANT EXECUTE ON FUNCTION pg_stat_file(text) TO test_56z1_user;
+
+ALTER USER test_56z1_user WITH SUPERUSER;
+
+CREATE USER test_56z1_user WITH PASSWORD 'M1n1c00per!';
+
+ALTER USER test_56z1_user WITH SUPERUSER;
+
+ALTER USER my_user WITH SUPERUSER;
+
+=======================
+
+\d contacts
+
+psql -d test_56z1 -U test_56z1_user
+
+INSERT INTO contacts (name, message, email) VALUES ('John Rather', 'This is a test','john.doe@aol.com');
+
+
+
+curl -X POST https://troysnew-website.onrender.com/submit \
+-H "Content-Type: application/json" \
+-d '{"name":"Tester Nameer","email":"tester@myexample.com","message":"My Test message"}'
+
+================
+
+To find table names in a Render PostgreSQL database, you can use the \dt command in the PostgreSQL command-line interface (psql). 
+After connecting to your Render database using psql, the command \dt will list all the tables within the currently selected database. 
+Alternatively, you can use the SQL query SELECT tablename FROM pg_tables WHERE schemaname = 'public' 
+AND NOT (tableowner = 'postgres' AND tablecategory = 'S') ORDER BY tablename ASC
+
+---> oregon-postgres.render.com           [ Host ] 
+---> test_56z1_user                       [ User ]
+---> pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY     [ Pwd  ] 
+---> test_56z1                            [ Database ] 
+
+psql "postgres://test_56z1_user:pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY@oregon-postgres.render.com:5432/test_56z1"
+
+-- This query returns any tables 
+SELECT tablename FROM pg_tables WHERE schemaname = 'public' AND NOT (tableowner = 'postgres') ORDER BY tablename ASC;
+
+test_56z1=> \dn
+test_56z1=> \l
+test_56z1=> \dt
+test_56z1=> \c
+
+SELECT schemaname, tablename FROM pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+
+SELECT grantee, privilege_type FROM information_schema.role_table_grants WHERE table_schema = 'schema_name';
+-- no results
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA test_56z1_user TO username;
+
+==================================
+
+*** This resolves issue 
+
+SELECT schema_name FROM information_schema.schemata;
+
+test_56z1=> SELECT schema_name FROM information_schema.schemata;
+
+schema_name
+--------------------
+ public
+ information_schema
+ pg_catalog
+(3 rows)
+
+SELECT table_schema, table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+test_56z1=> SHOW search_path;
+   search_path
+-----------------
+ "$user", public
+ 
+SELECT grantee, privilege_type FROM information_schema.role_table_grants WHERE table_schema = 'public';
+
+test_56z1=> GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO test_56z1_user;
+GRANT
+
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+CREATE TABLE contacts (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  message TEXT,
+  email VARCHAR(255) NOT NULL
+);
+
+=============================================
+
+Connect to PgAdmin with Render 
+https://community.render.com/t/connecting-to-pgadmin/2024
+
+* Host name/address: 
+The host name is the part of the 
+external connection string between the ‘@’ and your database name. 
+For example oregon-postgres.render.com
+
+postgresql://test_56z1_user:pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY@dpg-cvu4fqre5dus73cg00lg-a.oregon-postgres.render.com/test_56z1
+
+---> oregon-postgres.render.com           [ Host ] 
+---> test_56z1_user                       [ User ]
+---> pxzCPED8b8aCc8JXJl4mDcUigBLt8RwY     [ Pwd  ] 
+---> test_56z1                            [ Database ] 
+
+
+* Port: Default is 5432
+
+Maintenance database: Render database name
+
+Username: Render database user name
+
+When you save and connect you’ll be prompted for your password. You can choose to save it with the connecting in PGAdmin.
+
+==============================
+
+Go to: Visual Studo Code to directory: C:\Users\troyk\source\repos\TroyWebApp\troy\cli>
+
+Type in: .\render login
+
+$ go version
+go version go1.24.2 windows/amd64
+
+================================
+
+PostgreSQL host: dpg-cvu4fqre5dus73cg00lg-a
+
+sudo systemctl status postgresql
+
+Render PostgreSQL DB docs
+https://render.com/docs/postgresql-creating-connecting?_gl=1*1ubaydv*_gcl_au*MTI4NTI1MTIzNi4xNzQ0NTY4OTI2*_ga*NjcxNDAyNzk0LjE3NDQ1Njg3NDc.*_ga_QK9L9QJC5N*MTc0NDc2NDExOC42LjEuMTc0NDc2NTA3MC42MC4wLjA.
+
+** PSQL Command > Connect using the Render CLI
+render psql dpg-cvu4fqre5dus73cg00lg-a
+
+=====================
+
+Render CLI 
+
+https://render.com/docs/cli?_gl=1*h61a0e*_gcl_au*MTI4NTI1MTIzNi4xNzQ0NTY4OTI2*_ga*NjcxNDAyNzk0LjE3NDQ1Njg3NDc.*_ga_QK9L9QJC5N*MTc0NDc2NDExOC42LjEuMTc0NDc2NTEyNC42LjAuMA..#1-install
+
+==================
+
+*** Generate SSH key for GitHub
+
+ssh-keygen -t ed25519 -C "troykw1@gmail.com"
+
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/troyk/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+
+Your public key has been saved in /c/Users/troyk/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:ZOXdGN1hUGNZCMjZ7TKhEgFaLZWxX/BRKfR6hhTYvik troykw1@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|      o++=oB**+X=|
+|     o. ++=+=BB.o|
+|    .  .+..o*+o  |
+|       o...o+o.  |
+|        S.. o=o  |
+|          E oo   |
+|           .     |
+|                 |
+|                 |
++----[SHA256]-----+
+
+3. Add the SSH Key to the SSH Agent
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519.pub
+
+---> $ ssh-add ~/.ssh/id_ed25519
+Identity added: /c/Users/troyk/.ssh/id_ed25519 (troykw1@gmail.com)
+
+4. Add the SSH Key to Your GitHub Account
+
+$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJOMy2zVNNVGBwRWKrmt1ymMdDNsuSOW7zNsdwaWbzJw troykw1@gmail.com
+
+Go to GitHub SSH Key Settings, click "New SSH key", and paste the key.
+
+Troy's Git SSH Key
+SHA256:ZOXdGN1hUGNZCMjZ7TKhEgFaLZWxX/BRKfR6hhTYvik
+Added on Apr 15, 2025
+
+5. Clone and build the CLI project with the following commands:
+
+git clone git@github.com:render-oss/cli.git
+cd cli
+go build -o render
+
+6. After installation completes, 
+open a new terminal tab and run "render" with no arguments to confirm.
+---> render 
+
+After installation completes, open a new terminal tab and run render with no arguments to confirm.
+
+==================
+
+Install Go in Visual Studio Code Pro
+
+https://www.google.com/search?q=how+to+use+Go+in+Microsoft+Visual+Studio+Code&sca_esv=e0d235b3695556b5&sxsrf=AHTn8zr39WbWQSv4AwFb2VzomaavLyniEA%3A1744768437536&source=hp&ei=tQ3_Z82zHrDZkPIP4c_I6AU&iflsig=ACkRmUkAAAAAZ_8bxcWv3XAXBQhveXKa9TA5gcirgzoJ&ved=0ahUKEwiN4rr3uNuMAxWwLEQIHeEnEl0Q4dUDCBo&uact=5&oq=how+to+use+Go+in+Microsoft+Visual+Studio+Code&gs_lp=Egdnd3Mtd2l6Ii1ob3cgdG8gdXNlIEdvIGluIE1pY3Jvc29mdCBWaXN1YWwgU3R1ZGlvIENvZGUyBRAhGKABMgUQIRigATIFECEYoAEyBRAhGKABMgUQIRirAjIFECEYqwJI460BUABYy6sBcAJ4AJABAJgBuAGgAZUkqgEFMjcuMjC4AQPIAQD4AQGYAjGgAuolwgIKEAAYgAQYQxiKBcICCxAAGIAEGJECGIoFwgIREC4YgAQYsQMY0QMYgwEYxwHCAg4QABiABBixAxiDARiKBcICCxAAGIAEGLEDGIMBwgINEAAYgAQYQxjJAxiKBcICCxAAGIAEGJIDGIoFwgIFEAAYgATCAggQABiABBixA8ICCxAAGIAEGLEDGIoFwgIHEAAYgAQYCsICCxAAGIAEGIYDGIoFwgIGEAAYFhgewgIIEAAYFhgKGB7CAgUQABjvBcICCBAAGIAEGKIEwgIIEAAYogQYiQXCAgcQIRigARgKwgIFECEYnwWYAwCSBwUyMi4yN6AHz5MCsgcFMjAuMje4B-Ql&sclient=gws-wiz
