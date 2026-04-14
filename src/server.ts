@@ -1,15 +1,19 @@
+import express, { Request, Response } from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
+
+const app = express();              // Instantiate an express app
+const port = process.env.PORT || 3000;     // Save the port number where your server will be listening
 const path = require('path');       // Import path module for working with file paths
 const express = require('express'); // Import the express dependency
 const bodyParser = require('body-parser'); // Import body-parser to parse form data
-const app = express();              // Instantiate an express app
-const port = process.env.PORT || 3000;               // Save the port number where your server will be listening
-
+       
 // Middleware to parse form data
 // app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve images from the /images directory
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/images', express.static(path.join(__dirname, '../images')));
 
 // Serve static files from the current directory
 // app.use(express.static(__dirname));                       
@@ -22,15 +26,10 @@ app.use(express.static(path.join(__dirname, '.')));
 // res.send('Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>');
 // });
     
-// Route for the root URL
-app.get('/', (req, res) => {                         
-//  res.sendFile('index.html', { root: __dirname });      
-  // res.sendFile(__dirname + '/views/home.html'); // or wherever your home page file is
-
-    // Using path.join handles the absolute pathing for Vercel's environment
-  res.sendFile(path.join(__dirname, 'index.html'));
-
-});                                                            
+// Root route (go up one level from src to root)
+app.get('/', (req, res: Response) => {
+  res.sendFile(path.join(__dirname, '../index.html'));
+});                                                          
 
 // Route to handle form submission
 app.post('/submit', (req, res) => {
