@@ -85,9 +85,10 @@
 		
 function homePage() {
     var pagecontent = "Welcome to Troy's website, I hope you enjoy it.<br>";
-    pagecontent += "</images/img src='arrowiconsm.jpg'> Please visit my projects below, or <a href='#' onclick='projectPage(); return false;'>the Projects page.</a><br><br>"; 
+    // FIX: Corrected the img tag and added the /images/ path
+    pagecontent += "<img src='/images/arrowiconsm.jpg' alt='arrow'> Please visit my projects below, or <a href='#' onclick='projectPage(); return false;'>the Projects page.</a><br><br>"; 
 
-	// Deployed and Updated Python URL to new site https://troykwille.com
+    // Deployed and Updated Python URL to new site https://troykwille.com
     pagecontent += "<table style='border-collapse: collapse; text-align: left;'>" +
         "<tr>" +
             "<td style='padding: 10px;'>" +
@@ -95,11 +96,6 @@ function homePage() {
             "</td>" +
             "<td style='padding: 10px;'>" +
                 "<a href='#' onclick='projectPage(); return false;'><img src='/images/projects_javascript.png' alt='JS Projects' style='width: 100px; height: 96px;'></a>" +
-            "</td>" +
-        "</tr>" +
-        "<tr>" +
-            "<td colspan='2' style='padding: 5px;'>" +
-           //     "Please visit my <a href='#' onclick='projectPage(); return false;'>Projects page</a>" +
             "</td>" +
         "</tr>" +
     "</table>";
