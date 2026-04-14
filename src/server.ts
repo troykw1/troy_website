@@ -1,5 +1,5 @@
-import express, { Request, Response } from 'express';
 import path from 'path';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 
 const app = express();              // Instantiate an express app
@@ -12,8 +12,8 @@ const bodyParser = require('body-parser'); // Import body-parser to parse form d
 // app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Serve images from the /images directory
-app.use('/images', express.static(path.join(__dirname, '../images')));
+// Static images
+app.use('/images', express.static(path.join(process.cwd(), 'images')));
 
 // Serve static files from the current directory
 // app.use(express.static(__dirname));                       
@@ -26,10 +26,11 @@ app.use(express.static(path.join(__dirname, '.')));
 // res.send('Welcome to Troy K. Wille's website, I hope you enjoy it. <br><br> I built my website with: <ul><a href='https://nodejs.org/docs/latest/api/'</a><li>Node.js</li><a href='https://en.wikipedia.org/wiki/REST'</a><li>REST API</li><a href='https://www.postgresql.org/'</a><li>PostgreSQL</li></ul>');
 // });
     
-// Root route (go up one level from src to root)
+// Root route
 app.get('/', (req, res: Response) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
-});                                                          
+  // process.cwd() points to the project root where index.html lives
+  res.sendFile(path.join(process.cwd(), 'index.html'));
+});
 
 // Route to handle form submission
 app.post('/submit', (req, res) => {
