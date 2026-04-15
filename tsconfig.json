@@ -9,7 +9,8 @@
     "module": "commonjs",                        
     "lib": ["ES2020"],
     "types": ["node"],
-    "esModuleInterop": true,                     
+    "esModuleInterop": true,       
+    "allowSyntheticDefaultImports": true,              
     "forceConsistentCasingInFileNames": true,    
 
     /* Other Outputs */

@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
     const { name, email, message } = req.body;
     console.log('Form Data:', { name, email, message });
+
+    // Serve static files from the /Contact folder
+app.use('/Contact', express.static(path.join(process.cwd(), 'Contact')));
     
     // Note: You might want to update this URL to your Vercel URL later!
     res.send(`Thank you, ${name}! Your message has been received. <br> <a href='/'>Click here to return home</a>`);
