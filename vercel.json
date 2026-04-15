@@ -6,9 +6,19 @@
       "use": "@vercel/node"
     }
   ],
-"routes": [
+  "routes": [
+    {
+      "src": "/Contact/(.*)",
+      "dest": "/Contact/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
     { "handle": "filesystem" },
-    { "src": "/Contact/(.*)", "dest": "/Contact/$1" },
-    { "src": "/(.*)", "dest": "src/server.ts" }
+    {
+      "src": "/(.*)",
+      "dest": "src/server.ts"
+    }
   ]
 }
