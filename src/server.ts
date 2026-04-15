@@ -26,15 +26,19 @@ app.post('/submit', async (req: Request, res: Response) => {
 
     try {
         const sql = 'INSERT INTO contact (name, email, message) VALUES ($1, $2, $3) RETURNING *';
-        const result = await query(sql, [name, email, message]);
+        await query(sql, [name, email, message]);
         
-        res.status(200).json(result.rows[0]);
+        // Option A: Send a Success Code (Best for AJAX/Fetch)
+        res.status(200).send("<h1>Thank You!</h1><p>Your message was sent.</p><a href='/'>Back to Home</a>");
+
+        // Option B: Redirect to a custom thank-you.html page
+        // res.redirect('/Contact/thank-you.html');
+
     } catch (error: any) {
         console.error('Database Error:', error.message);
-        res.status(500).json({ error: "Database connection failed" });
+        res.status(500).send("Internal Server Error");
     }
 });
-
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
