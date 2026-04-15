@@ -1,39 +1,57 @@
-import express = require('express');
-import path = require('path');
-const bodyParser = require('body-parser');
+import express from 'express'; // Standard TS import
+import path from 'path';
+import * as bodyParser from 'body-parser';
+import client from './db'; // This matches the 'export default' in db.ts
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-// REMOVED: Duplicate const declarations that were causing the crash
-
-// Middleware to parse form data
+// --- Middleware ---
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-// Static images
+// --- Static Files ---
+// Serve images
 app.use('/images', express.static(path.join(process.cwd(), 'images')));
 
-// Serve static files from the root directory
+// Serve the Contact folder assets (index.html inside /Contact)
+app.use('/Contact', express.static(path.join(process.cwd(), 'Contact')));
+
+// Serve other static files from root
 app.use(express.static(path.join(process.cwd(), '.')));
 
-// Root route
+// --- Routes ---
+
+// Home Page
 app.get('/', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'index.html'));
 });
 
-// Route to handle form submission
-app.post('/submit', (req, res) => {
+// Database Submission Route
+app.post('/submit', async (req, res) => {
     const { name, email, message } = req.body;
-    console.log('Form Data:', { name, email, message });
+    console.log('Received Form Data:', { name, email, message });
 
-    // Serve static files from the /Contact folder
-app.use('/Contact', express.static(path.join(process.cwd(), 'Contact')));
-    
-    // Note: You might want to update this URL to your Vercel URL later!
-    res.send(`Thank you, ${name}! Your message has been received. <br> <a href='/'>Click here to return home</a>`);
+    try {
+        // 1. Try the database query
+        const result = await client.query(
+            'INSERT INTO contact (name, email, message) VALUES ($1, $2, $3) RETURNING *', 
+            [name, email, message]
+        );
+        
+        console.log('Success:', result.rows[0]);
+        
+        // 2. Stop the spinning on success
+        res.send(`<h1>Success!</h1><p>Thank you ${name}.</p><a href="/">Go Home</a>`);
+
+    } catch (error) {
+        // 3. Stop the spinning on failure
+        console.error('❌ Database Error:', error.message);
+        res.status(500).send("The database is not responding. Check your table name and connection.");
+    }
 });
 
-// Start the server
+// --- Start Server ---
 app.listen(port, () => {
-    console.log(`Now listening on port ${port}`);
+    console.log(`Server is live and listening on port ${port}`);
 });
