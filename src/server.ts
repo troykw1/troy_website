@@ -21,7 +21,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 // POST Route
-app.post('/Contact', async (req: Request, res: Response) => {
+app.post('/submit', async (req: Request, res: Response) => {
     const { name, email, message } = req.body;
 
     try {
