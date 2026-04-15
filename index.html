@@ -86,7 +86,7 @@
 function homePage() {
     var pagecontent = "Welcome to Troy's website, I hope you enjoy it.<br>";
     // FIX: Corrected the img tag and added the /images/ path
-   	pagecontent += "<img src='/images/arrowiconsm.jpg'><a href='https://troykwille.com' target='_blank'><b>This website application I built uses Python, Django web framework and PostgreSQL.</b></a><br><br>";
+ //  pagecontent += "<img src='/images/arrowiconsm.jpg'><a href='https://troykwille.com' target='_blank'><b>This website application I built uses Python, Django web framework and PostgreSQL.</b></a><br><br>";
 
     // Deployed and Updated Python URL to new site https://troykwille.com
     pagecontent += "<table style='border-collapse: collapse; text-align: left;'>" +
@@ -291,25 +291,36 @@ function homePage() {
                    '</table>';  
 	
 	// Node 
-	pagecontent += '<div id="Node" style="clear:both; padding-top: 15px;"><h4>Node.js application with PostgreSQL and REST APIs</h4></div>';
+	pagecontent += '<div id="Node" style="clear:both; padding-top: 15px;"><h4>Node.js application using TypeScript, Express.js web framework, PostgreSQL and REST API</h4></div>';
 
-	pagecontent += "This website application I built uses JavaScript, Node.js, PostgreSQL and REST API.<br>";
-	pagecontent += "The server-side logic is handled by a Node.js runtime environment using Express framework.<br>";	
-    pagecontent += "The communication between the client and server is facilitated by a RESTful API, which uses standard HTTP methods: GET, POST, PUT, DELETE to perform CRUD operations.<br>";
-    pagecontent += "The API interacts with PostgreSQL relational database using node-postgres client library to manage and persist data.<br><br>";
+	pagecontent += "This website application I built uses TypeScript, Express.js web framework, Node.js with ES Modules, PostgreSQL, REST API and Serverless Functions.<br>";
+	pagecontent += "-The server-side logic is handled by a Express.js web framework, Node.js with ES Modules, REST API and Serverless Functions.<br>";	
+    pagecontent += "-The frontend is architected as a Thin Client using Vanilla JavaScript (ES6+). I implemented a Non-Blocking data flow using the Fetch API to handle asynchronous POST requests ; <br>this ensures that data submission to the REST endpoint happens in the background, allowing for a seamless UI transition to a success state without a document refresh.<br>";
+    pagecontent += "-The API acts as a secure bridge, using the node-postgres (pg) driver to facilitate communication between the server and the cloud PostgreSQL database.<br><br>";
 		
-	pagecontent += "<li>This Node.js application performs essential database and CRUD operations using REST API with standard HTTP methods: GET, POST, PUT, DELETE.</li>";
-    pagecontent += "<li>This Node.js application can insert data from a CSV fle into PostgreSQL database using Node.js.</li>";
-	pagecontent += "<li>This Node.js application Contact form parses and saves data into PostgreSQL database.</li>";
+//	pagecontent += "<li>This Node.js application performs essential database and CRUD operations using REST API with standard HTTP methods: GET, POST, PUT, DELETE.</li>";
+//  pagecontent += "<li>This Node.js application can insert data from a CSV fle into PostgreSQL database using Node.js.</li>";
+//	pagecontent += "<li>This Node.js application Contact form parses and saves data into PostgreSQL database.</li>";
 
 	// Python pages
     pagecontent += '<div id="Python" style="clear:both; padding-top: 15px;"><h4>Python projects.</h4></div>';
 
 		// Updated Projects for Python site with new URL 
 	pagecontent += "<img src='/images/arrowiconsm.jpg'><a href='https://troykwille.com' target='_blank'><b>This website application I built uses Python, Django web framework and PostgreSQL.</b></a><br><br>";
-		
-	pagecontent += "I also use Python Psycopg2 package which is a PostgreSQL database adapter for Python, that I use with my Node.js web application.";
-    pagecontent += "This Python Psycopg2 package provides an API that allows me connect to PostgreSQL database tied to my Node.js web application, to perform database and CRUD operations, run various SQL commands and queries and manage transactions.";
+	
+	pagecontent += "<b>Backend:</b><br>";
+	pagecontent += "-I built this above <a href='https://troykwille.com' target='_blank'> web application with Python, Django web framework and REST API</a> that connects to a PostgreSQL database, that handles user Authentication, Authorization, Validation and Session management.<br>";
+	pagecontent += "-I integrated a CI/CD pipeline to automate PEP8 linting and testing, ensuring high code quality and stable deployments.<br>";
+	pagecontent += "-I engineered a token-based password recovery system for this Python Django application, implementing custom CSRF-hardened HTTPS form submissions and a secure SMTP relay to ensure reliable deliverability in restricted cloud environments.<br>";
+	pagecontent += "-I engineered an event-driven trigger using Django Signals ('Internal Hooks') to automate real-time transactional email alerts upon database record creation.<br><br>";
+	
+	pagecontent += "<b>Frontend Logic:</b><br>";
+	pagecontent += "-I am using JavaScript in this web application for CSRF Token Security Handling, REST API Communication, Crossword Game Engine and Dynamic UI & Filtering.<br>";
+	pagecontent += "<b>Interactive:</b><br>";
+	pagecontent += "The Crossword puzzle utilizes JavaScript for real-time validation and REST API communication.";
+	
+//	pagecontent += "I also use Python Psycopg2 package which is a PostgreSQL database adapter for Python, that I use with my Node.js web application.";
+//	pagecontent += "This Python Psycopg2 package provides an API that allows me connect to PostgreSQL database tied to my Node.js web application, to perform database and CRUD operations, run various SQL commands and queries and manage transactions.";
 		
 	this.content.innerHTML=pagecontent;
 	this.headerDescription.innerHTML='Project Page';
