@@ -14,6 +14,7 @@ app.use(express.json());
 // Static Files
 app.use(express.static(path.join(__dirname, '../')));
 app.use('/Contact', express.static(path.join(__dirname, '../Contact')));
+app.use('/images', express.static(path.join(__dirname, '../images')));
 
 // Root Route
 app.get('/', (req: Request, res: Response) => {
