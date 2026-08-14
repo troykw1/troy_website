@@ -1,12 +1,15 @@
-{
+Set-Content -Path package.json -Value '{
   "name": "troy-website",
   "version": "1.0.0",
+  "engines": {
+    "node": "24.x"
+  },
   "type": "module",
   "main": "src/server.ts",
   "scripts": {
-  "start": "node dist/server.js",
-  "build": "tsc", 
-  "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server.js",
+    "build": "tsc", 
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Troy Wille",
   "license": "ISC",
@@ -26,4 +29,4 @@
     "@types/pg": "^8.20.0",
     "typescript": "^6.0.2"
   }
-}
+}'
